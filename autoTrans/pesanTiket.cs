@@ -24,6 +24,9 @@ namespace autoTrans
             waktuComboBox.Items.Add("17.30 WIB");
             waktuComboBox.Items.Add("19.30 WIB");
             waktuMonthCalendar.MaxSelectionCount = 1;
+
+            trayekComboBox.Items.Add("Jakarta");
+            trayekComboBox.Items.Add("Depok");
         }
     }
 }
