@@ -25,8 +25,40 @@ namespace autoTrans
             waktuComboBox.Items.Add("19.30 WIB");
             waktuMonthCalendar.MaxSelectionCount = 1;
 
-            trayekComboBox.Items.Add("Jakarta");
-            trayekComboBox.Items.Add("Depok");
+            trayekComboBox.Items.Add("Depok - Bandung");
+            trayekComboBox.Items.Add("Bandung - Depok");
+
+            label1.Text = "1";
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label2.Text = "2";
+            label3.Text = "3";
+            label4.Text = "4";
+            label5.Text = "5";
+            label6.Text = "6";
+            label7.Text = "7";
+            label8.Text = "8";
+            label9.Text = "9";
+            label10.Text = "10";
+            label11.Text = "11";
+            label12.Text = "12";
+            label13.Text = "13";
+
+            kursiSupir.Image = Image.FromFile("src/kursisupir.jpg");
+            kursi1.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi2.Image = Image.FromFile("src/kursiterisi.jpg");
+            kursi3.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi4.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi5.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi6.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi7.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi8.Image = Image.FromFile("src/kursiterisi.jpg");
+            kursi9.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi10.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi11.Image = Image.FromFile("src/kursiterisi.jpg");
+            kursi12.Image = Image.FromFile("src/kursikosong.jpg");
+            kursi13.Image = Image.FromFile("src/kursikosong.jpg");
+            //MessageBox.Show(kursi1.Size.ToString());
+            //MessageBox.Show(kursi1.Image.Size.ToString());
         }
     }
 }
