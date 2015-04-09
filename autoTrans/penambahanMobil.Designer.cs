@@ -1,6 +1,6 @@
 ﻿namespace autoTrans
 {
-    partial class Tiket
+    partial class penambahanMobil
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.judulTiketLabel = new System.Windows.Forms.Label();
-            this.pelangganGroupBox = new System.Windows.Forms.GroupBox();
-            this.cekKursiButton = new System.Windows.Forms.Button();
-            this.trayekComboBox = new System.Windows.Forms.ComboBox();
-            this.teleponTextBox = new System.Windows.Forms.TextBox();
-            this.teleponLabel = new System.Windows.Forms.Label();
-            this.waktuMonthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.waktuComboBox = new System.Windows.Forms.ComboBox();
-            this.waktuLabel = new System.Windows.Forms.Label();
-            this.trayekTiketLabel = new System.Windows.Forms.Label();
-            this.namaTiketLabel = new System.Windows.Forms.Label();
-            this.namaTextBox = new System.Windows.Forms.TextBox();
-            this.simpanButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.mobilComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,10 +57,20 @@
             this.kursi5 = new System.Windows.Forms.PictureBox();
             this.kursi7 = new System.Windows.Forms.PictureBox();
             this.kursi6 = new System.Windows.Forms.PictureBox();
-            this.mobilComboBox = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pelangganGroupBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.cekKursiButton = new System.Windows.Forms.Button();
+            this.trayekComboBox = new System.Windows.Forms.ComboBox();
+            this.teleponTextBox = new System.Windows.Forms.TextBox();
+            this.teleponLabel = new System.Windows.Forms.Label();
+            this.waktuMonthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.waktuComboBox = new System.Windows.Forms.ComboBox();
+            this.waktuLabel = new System.Windows.Forms.Label();
+            this.trayekTiketLabel = new System.Windows.Forms.Label();
+            this.namaTiketLabel = new System.Windows.Forms.Label();
+            this.namaTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tambahButton = new System.Windows.Forms.Button();
+            this.pelangganGroupBox = new System.Windows.Forms.GroupBox();
+            this.judulTiketLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi12)).BeginInit();
@@ -87,169 +85,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.kursi5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi6)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.pelangganGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // judulTiketLabel
+            // label14
             // 
-            this.judulTiketLabel.AutoSize = true;
-            this.judulTiketLabel.Font = new System.Drawing.Font("Motorwerk", 50F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judulTiketLabel.Location = new System.Drawing.Point(47, 17);
-            this.judulTiketLabel.Name = "judulTiketLabel";
-            this.judulTiketLabel.Size = new System.Drawing.Size(540, 51);
-            this.judulTiketLabel.TabIndex = 0;
-            this.judulTiketLabel.Text = "Pemesanan Tiket";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(45, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Mobil";
             // 
-            // pelangganGroupBox
+            // mobilComboBox
             // 
-            this.pelangganGroupBox.Controls.Add(this.cekKursiButton);
-            this.pelangganGroupBox.Controls.Add(this.trayekComboBox);
-            this.pelangganGroupBox.Controls.Add(this.teleponTextBox);
-            this.pelangganGroupBox.Controls.Add(this.teleponLabel);
-            this.pelangganGroupBox.Controls.Add(this.waktuMonthCalendar);
-            this.pelangganGroupBox.Controls.Add(this.waktuComboBox);
-            this.pelangganGroupBox.Controls.Add(this.waktuLabel);
-            this.pelangganGroupBox.Controls.Add(this.trayekTiketLabel);
-            this.pelangganGroupBox.Controls.Add(this.namaTiketLabel);
-            this.pelangganGroupBox.Controls.Add(this.namaTextBox);
-            this.pelangganGroupBox.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pelangganGroupBox.Location = new System.Drawing.Point(18, 80);
-            this.pelangganGroupBox.Name = "pelangganGroupBox";
-            this.pelangganGroupBox.Size = new System.Drawing.Size(272, 431);
-            this.pelangganGroupBox.TabIndex = 1;
-            this.pelangganGroupBox.TabStop = false;
-            this.pelangganGroupBox.Text = "Pelanggan";
-            // 
-            // cekKursiButton
-            // 
-            this.cekKursiButton.Location = new System.Drawing.Point(175, 389);
-            this.cekKursiButton.Name = "cekKursiButton";
-            this.cekKursiButton.Size = new System.Drawing.Size(75, 23);
-            this.cekKursiButton.TabIndex = 13;
-            this.cekKursiButton.Text = "Cek Kursi";
-            this.cekKursiButton.UseVisualStyleBackColor = true;
-            // 
-            // trayekComboBox
-            // 
-            this.trayekComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.trayekComboBox.FormattingEnabled = true;
-            this.trayekComboBox.Location = new System.Drawing.Point(96, 114);
-            this.trayekComboBox.Name = "trayekComboBox";
-            this.trayekComboBox.Size = new System.Drawing.Size(170, 23);
-            this.trayekComboBox.TabIndex = 12;
-            // 
-            // teleponTextBox
-            // 
-            this.teleponTextBox.Location = new System.Drawing.Point(96, 73);
-            this.teleponTextBox.Name = "teleponTextBox";
-            this.teleponTextBox.Size = new System.Drawing.Size(170, 23);
-            this.teleponTextBox.TabIndex = 11;
-            // 
-            // teleponLabel
-            // 
-            this.teleponLabel.AutoSize = true;
-            this.teleponLabel.Location = new System.Drawing.Point(32, 76);
-            this.teleponLabel.Name = "teleponLabel";
-            this.teleponLabel.Size = new System.Drawing.Size(52, 16);
-            this.teleponLabel.TabIndex = 10;
-            this.teleponLabel.Text = "Telepon";
-            // 
-            // waktuMonthCalendar
-            // 
-            this.waktuMonthCalendar.Location = new System.Drawing.Point(33, 207);
-            this.waktuMonthCalendar.Name = "waktuMonthCalendar";
-            this.waktuMonthCalendar.TabIndex = 8;
-            // 
-            // waktuComboBox
-            // 
-            this.waktuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.waktuComboBox.FormattingEnabled = true;
-            this.waktuComboBox.Location = new System.Drawing.Point(96, 157);
-            this.waktuComboBox.Name = "waktuComboBox";
-            this.waktuComboBox.Size = new System.Drawing.Size(89, 23);
-            this.waktuComboBox.TabIndex = 6;
-            // 
-            // waktuLabel
-            // 
-            this.waktuLabel.AutoSize = true;
-            this.waktuLabel.Location = new System.Drawing.Point(32, 160);
-            this.waktuLabel.Name = "waktuLabel";
-            this.waktuLabel.Size = new System.Drawing.Size(44, 16);
-            this.waktuLabel.TabIndex = 5;
-            this.waktuLabel.Text = "Waktu";
-            // 
-            // trayekTiketLabel
-            // 
-            this.trayekTiketLabel.AutoSize = true;
-            this.trayekTiketLabel.Location = new System.Drawing.Point(32, 120);
-            this.trayekTiketLabel.Name = "trayekTiketLabel";
-            this.trayekTiketLabel.Size = new System.Drawing.Size(48, 16);
-            this.trayekTiketLabel.TabIndex = 2;
-            this.trayekTiketLabel.Text = "Trayek";
-            // 
-            // namaTiketLabel
-            // 
-            this.namaTiketLabel.AutoSize = true;
-            this.namaTiketLabel.Location = new System.Drawing.Point(32, 34);
-            this.namaTiketLabel.Name = "namaTiketLabel";
-            this.namaTiketLabel.Size = new System.Drawing.Size(41, 16);
-            this.namaTiketLabel.TabIndex = 1;
-            this.namaTiketLabel.Text = "Nama";
-            // 
-            // namaTextBox
-            // 
-            this.namaTextBox.Location = new System.Drawing.Point(96, 31);
-            this.namaTextBox.Name = "namaTextBox";
-            this.namaTextBox.Size = new System.Drawing.Size(170, 23);
-            this.namaTextBox.TabIndex = 0;
-            // 
-            // simpanButton
-            // 
-            this.simpanButton.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpanButton.Location = new System.Drawing.Point(551, 517);
-            this.simpanButton.Name = "simpanButton";
-            this.simpanButton.Size = new System.Drawing.Size(72, 23);
-            this.simpanButton.TabIndex = 16;
-            this.simpanButton.Text = "Simpan";
-            this.simpanButton.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.mobilComboBox);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.kursi13);
-            this.groupBox1.Controls.Add(this.kursi3);
-            this.groupBox1.Controls.Add(this.kursi12);
-            this.groupBox1.Controls.Add(this.kursi1);
-            this.groupBox1.Controls.Add(this.kursi11);
-            this.groupBox1.Controls.Add(this.kursiSupir);
-            this.groupBox1.Controls.Add(this.kursi10);
-            this.groupBox1.Controls.Add(this.kursi2);
-            this.groupBox1.Controls.Add(this.kursi9);
-            this.groupBox1.Controls.Add(this.kursi4);
-            this.groupBox1.Controls.Add(this.kursi8);
-            this.groupBox1.Controls.Add(this.kursi5);
-            this.groupBox1.Controls.Add(this.kursi7);
-            this.groupBox1.Controls.Add(this.kursi6);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(344, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(289, 431);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kursi";
+            this.mobilComboBox.FormattingEnabled = true;
+            this.mobilComboBox.Location = new System.Drawing.Point(111, 20);
+            this.mobilComboBox.Name = "mobilComboBox";
+            this.mobilComboBox.Size = new System.Drawing.Size(121, 23);
+            this.mobilComboBox.TabIndex = 45;
             // 
             // label13
             // 
@@ -483,38 +338,179 @@
             this.kursi6.TabIndex = 24;
             this.kursi6.TabStop = false;
             // 
-            // mobilComboBox
+            // cekKursiButton
             // 
-            this.mobilComboBox.FormattingEnabled = true;
-            this.mobilComboBox.Location = new System.Drawing.Point(111, 20);
-            this.mobilComboBox.Name = "mobilComboBox";
-            this.mobilComboBox.Size = new System.Drawing.Size(121, 23);
-            this.mobilComboBox.TabIndex = 45;
+            this.cekKursiButton.Location = new System.Drawing.Point(175, 389);
+            this.cekKursiButton.Name = "cekKursiButton";
+            this.cekKursiButton.Size = new System.Drawing.Size(75, 23);
+            this.cekKursiButton.TabIndex = 13;
+            this.cekKursiButton.Text = "Cek Kursi";
+            this.cekKursiButton.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // trayekComboBox
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(45, 23);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 16);
-            this.label14.TabIndex = 46;
-            this.label14.Text = "Mobil";
+            this.trayekComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.trayekComboBox.FormattingEnabled = true;
+            this.trayekComboBox.Location = new System.Drawing.Point(96, 114);
+            this.trayekComboBox.Name = "trayekComboBox";
+            this.trayekComboBox.Size = new System.Drawing.Size(170, 23);
+            this.trayekComboBox.TabIndex = 12;
             // 
-            // Tiket
+            // teleponTextBox
+            // 
+            this.teleponTextBox.Location = new System.Drawing.Point(96, 73);
+            this.teleponTextBox.Name = "teleponTextBox";
+            this.teleponTextBox.Size = new System.Drawing.Size(170, 23);
+            this.teleponTextBox.TabIndex = 11;
+            // 
+            // teleponLabel
+            // 
+            this.teleponLabel.AutoSize = true;
+            this.teleponLabel.Location = new System.Drawing.Point(32, 76);
+            this.teleponLabel.Name = "teleponLabel";
+            this.teleponLabel.Size = new System.Drawing.Size(52, 16);
+            this.teleponLabel.TabIndex = 10;
+            this.teleponLabel.Text = "Telepon";
+            // 
+            // waktuMonthCalendar
+            // 
+            this.waktuMonthCalendar.Location = new System.Drawing.Point(33, 207);
+            this.waktuMonthCalendar.Name = "waktuMonthCalendar";
+            this.waktuMonthCalendar.TabIndex = 8;
+            // 
+            // waktuComboBox
+            // 
+            this.waktuComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.waktuComboBox.FormattingEnabled = true;
+            this.waktuComboBox.Location = new System.Drawing.Point(96, 157);
+            this.waktuComboBox.Name = "waktuComboBox";
+            this.waktuComboBox.Size = new System.Drawing.Size(89, 23);
+            this.waktuComboBox.TabIndex = 6;
+            // 
+            // waktuLabel
+            // 
+            this.waktuLabel.AutoSize = true;
+            this.waktuLabel.Location = new System.Drawing.Point(32, 160);
+            this.waktuLabel.Name = "waktuLabel";
+            this.waktuLabel.Size = new System.Drawing.Size(44, 16);
+            this.waktuLabel.TabIndex = 5;
+            this.waktuLabel.Text = "Waktu";
+            // 
+            // trayekTiketLabel
+            // 
+            this.trayekTiketLabel.AutoSize = true;
+            this.trayekTiketLabel.Location = new System.Drawing.Point(32, 120);
+            this.trayekTiketLabel.Name = "trayekTiketLabel";
+            this.trayekTiketLabel.Size = new System.Drawing.Size(48, 16);
+            this.trayekTiketLabel.TabIndex = 2;
+            this.trayekTiketLabel.Text = "Trayek";
+            // 
+            // namaTiketLabel
+            // 
+            this.namaTiketLabel.AutoSize = true;
+            this.namaTiketLabel.Location = new System.Drawing.Point(32, 34);
+            this.namaTiketLabel.Name = "namaTiketLabel";
+            this.namaTiketLabel.Size = new System.Drawing.Size(41, 16);
+            this.namaTiketLabel.TabIndex = 1;
+            this.namaTiketLabel.Text = "Nama";
+            // 
+            // namaTextBox
+            // 
+            this.namaTextBox.Location = new System.Drawing.Point(96, 31);
+            this.namaTextBox.Name = "namaTextBox";
+            this.namaTextBox.Size = new System.Drawing.Size(170, 23);
+            this.namaTextBox.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.mobilComboBox);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.kursi13);
+            this.groupBox1.Controls.Add(this.kursi3);
+            this.groupBox1.Controls.Add(this.kursi12);
+            this.groupBox1.Controls.Add(this.kursi1);
+            this.groupBox1.Controls.Add(this.kursi11);
+            this.groupBox1.Controls.Add(this.kursiSupir);
+            this.groupBox1.Controls.Add(this.kursi10);
+            this.groupBox1.Controls.Add(this.kursi2);
+            this.groupBox1.Controls.Add(this.kursi9);
+            this.groupBox1.Controls.Add(this.kursi4);
+            this.groupBox1.Controls.Add(this.kursi8);
+            this.groupBox1.Controls.Add(this.kursi5);
+            this.groupBox1.Controls.Add(this.kursi7);
+            this.groupBox1.Controls.Add(this.kursi6);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(344, 71);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(289, 431);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kursi";
+            // 
+            // tambahButton
+            // 
+            this.tambahButton.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tambahButton.Location = new System.Drawing.Point(522, 508);
+            this.tambahButton.Name = "tambahButton";
+            this.tambahButton.Size = new System.Drawing.Size(101, 23);
+            this.tambahButton.TabIndex = 20;
+            this.tambahButton.Text = "Tambah Mobil";
+            this.tambahButton.UseVisualStyleBackColor = true;
+            // 
+            // pelangganGroupBox
+            // 
+            this.pelangganGroupBox.Controls.Add(this.cekKursiButton);
+            this.pelangganGroupBox.Controls.Add(this.trayekComboBox);
+            this.pelangganGroupBox.Controls.Add(this.teleponTextBox);
+            this.pelangganGroupBox.Controls.Add(this.teleponLabel);
+            this.pelangganGroupBox.Controls.Add(this.waktuMonthCalendar);
+            this.pelangganGroupBox.Controls.Add(this.waktuComboBox);
+            this.pelangganGroupBox.Controls.Add(this.waktuLabel);
+            this.pelangganGroupBox.Controls.Add(this.trayekTiketLabel);
+            this.pelangganGroupBox.Controls.Add(this.namaTiketLabel);
+            this.pelangganGroupBox.Controls.Add(this.namaTextBox);
+            this.pelangganGroupBox.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pelangganGroupBox.Location = new System.Drawing.Point(18, 71);
+            this.pelangganGroupBox.Name = "pelangganGroupBox";
+            this.pelangganGroupBox.Size = new System.Drawing.Size(272, 431);
+            this.pelangganGroupBox.TabIndex = 19;
+            this.pelangganGroupBox.TabStop = false;
+            this.pelangganGroupBox.Text = "Pelanggan";
+            // 
+            // judulTiketLabel
+            // 
+            this.judulTiketLabel.AutoSize = true;
+            this.judulTiketLabel.Font = new System.Drawing.Font("Motorwerk", 50F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judulTiketLabel.Location = new System.Drawing.Point(12, 9);
+            this.judulTiketLabel.Name = "judulTiketLabel";
+            this.judulTiketLabel.Size = new System.Drawing.Size(630, 51);
+            this.judulTiketLabel.TabIndex = 18;
+            this.judulTiketLabel.Text = "Penambahan Mobil";
+            // 
+            // penambahanMobil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 554);
+            this.ClientSize = new System.Drawing.Size(668, 539);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.simpanButton);
+            this.Controls.Add(this.tambahButton);
             this.Controls.Add(this.pelangganGroupBox);
             this.Controls.Add(this.judulTiketLabel);
-            this.Name = "Tiket";
+            this.Name = "penambahanMobil";
             this.Text = "autoTrans";
-            this.pelangganGroupBox.ResumeLayout(false);
-            this.pelangganGroupBox.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi12)).EndInit();
@@ -529,6 +525,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.kursi5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi6)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.pelangganGroupBox.ResumeLayout(false);
+            this.pelangganGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,20 +536,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label judulTiketLabel;
-        private System.Windows.Forms.GroupBox pelangganGroupBox;
-        private System.Windows.Forms.TextBox namaTextBox;
-        private System.Windows.Forms.Label trayekTiketLabel;
-        private System.Windows.Forms.Label namaTiketLabel;
-        private System.Windows.Forms.ComboBox waktuComboBox;
-        private System.Windows.Forms.Label waktuLabel;
-        private System.Windows.Forms.MonthCalendar waktuMonthCalendar;
-        private System.Windows.Forms.TextBox teleponTextBox;
-        private System.Windows.Forms.Label teleponLabel;
-        private System.Windows.Forms.ComboBox trayekComboBox;
-        private System.Windows.Forms.Button cekKursiButton;
-        private System.Windows.Forms.Button simpanButton;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox mobilComboBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox kursi13;
         private System.Windows.Forms.PictureBox kursi3;
         private System.Windows.Forms.PictureBox kursi12;
@@ -564,21 +565,19 @@
         private System.Windows.Forms.PictureBox kursi5;
         private System.Windows.Forms.PictureBox kursi7;
         private System.Windows.Forms.PictureBox kursi6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox mobilComboBox;
+        private System.Windows.Forms.Button cekKursiButton;
+        private System.Windows.Forms.ComboBox trayekComboBox;
+        private System.Windows.Forms.TextBox teleponTextBox;
+        private System.Windows.Forms.Label teleponLabel;
+        private System.Windows.Forms.MonthCalendar waktuMonthCalendar;
+        private System.Windows.Forms.ComboBox waktuComboBox;
+        private System.Windows.Forms.Label waktuLabel;
+        private System.Windows.Forms.Label trayekTiketLabel;
+        private System.Windows.Forms.Label namaTiketLabel;
+        private System.Windows.Forms.TextBox namaTextBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button tambahButton;
+        private System.Windows.Forms.GroupBox pelangganGroupBox;
+        private System.Windows.Forms.Label judulTiketLabel;
     }
 }
-
