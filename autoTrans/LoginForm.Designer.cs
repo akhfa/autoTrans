@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.loginGroupBox = new System.Windows.Forms.GroupBox();
-            this.userTextBox = new System.Windows.Forms.TextBox();
-            this.judulTiketLabel = new System.Windows.Forms.Label();
-            this.userLabel = new System.Windows.Forms.Label();
-            this.passLabel = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.passLabel = new System.Windows.Forms.Label();
+            this.userLabel = new System.Windows.Forms.Label();
+            this.userTextBox = new System.Windows.Forms.TextBox();
+            this.judulLoginLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.loginGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -52,31 +52,13 @@
             this.loginGroupBox.TabStop = false;
             this.loginGroupBox.Text = "Login";
             // 
-            // userTextBox
+            // passwordTextBox
             // 
-            this.userTextBox.Location = new System.Drawing.Point(94, 19);
-            this.userTextBox.Name = "userTextBox";
-            this.userTextBox.Size = new System.Drawing.Size(100, 23);
-            this.userTextBox.TabIndex = 0;
-            // 
-            // judulTiketLabel
-            // 
-            this.judulTiketLabel.AutoSize = true;
-            this.judulTiketLabel.Font = new System.Drawing.Font("Motorwerk", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judulTiketLabel.Location = new System.Drawing.Point(53, 18);
-            this.judulTiketLabel.Name = "judulTiketLabel";
-            this.judulTiketLabel.Size = new System.Drawing.Size(153, 26);
-            this.judulTiketLabel.TabIndex = 1;
-            this.judulTiketLabel.Text = "Welcome";
-            // 
-            // userLabel
-            // 
-            this.userLabel.AutoSize = true;
-            this.userLabel.Location = new System.Drawing.Point(7, 25);
-            this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(34, 16);
-            this.userLabel.TabIndex = 2;
-            this.userLabel.Text = "User";
+            this.passwordTextBox.Location = new System.Drawing.Point(94, 50);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.PasswordChar = '*';
+            this.passwordTextBox.Size = new System.Drawing.Size(100, 23);
+            this.passwordTextBox.TabIndex = 4;
             // 
             // passLabel
             // 
@@ -87,13 +69,31 @@
             this.passLabel.TabIndex = 3;
             this.passLabel.Text = "Password";
             // 
-            // passwordTextBox
+            // userLabel
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(94, 50);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '*';
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 23);
-            this.passwordTextBox.TabIndex = 4;
+            this.userLabel.AutoSize = true;
+            this.userLabel.Location = new System.Drawing.Point(7, 25);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(34, 16);
+            this.userLabel.TabIndex = 2;
+            this.userLabel.Text = "User";
+            // 
+            // userTextBox
+            // 
+            this.userTextBox.Location = new System.Drawing.Point(94, 19);
+            this.userTextBox.Name = "userTextBox";
+            this.userTextBox.Size = new System.Drawing.Size(100, 23);
+            this.userTextBox.TabIndex = 0;
+            // 
+            // judulLoginLabel
+            // 
+            this.judulLoginLabel.AutoSize = true;
+            this.judulLoginLabel.Font = new System.Drawing.Font("Motorwerk", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judulLoginLabel.Location = new System.Drawing.Point(53, 14);
+            this.judulLoginLabel.Name = "judulLoginLabel";
+            this.judulLoginLabel.Size = new System.Drawing.Size(153, 26);
+            this.judulLoginLabel.TabIndex = 1;
+            this.judulLoginLabel.Text = "Welcome";
             // 
             // button1
             // 
@@ -110,7 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(249, 181);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.judulTiketLabel);
+            this.Controls.Add(this.judulLoginLabel);
             this.Controls.Add(this.loginGroupBox);
             this.Name = "LoginForm";
             this.Text = "Aya Travel";
@@ -127,7 +127,7 @@
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.Label passLabel;
         private System.Windows.Forms.Label userLabel;
-        private System.Windows.Forms.Label judulTiketLabel;
+        private System.Windows.Forms.Label judulLoginLabel;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button button1;
     }
