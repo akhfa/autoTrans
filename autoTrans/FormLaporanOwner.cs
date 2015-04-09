@@ -15,6 +15,18 @@ namespace autoTrans
         public laporanForm()
         {
             InitializeComponent();
+            bulanComboBox.Items.Add("Januari");
+            bulanComboBox.Items.Add("Februari");
+            bulanComboBox.Items.Add("Maret");
+            bulanComboBox.Items.Add("April");
+            bulanComboBox.Items.Add("Mei");
+            bulanComboBox.Items.Add("Juni");
+            bulanComboBox.Items.Add("Juli");
+            bulanComboBox.Items.Add("Agustus");
+            bulanComboBox.Items.Add("September");
+            bulanComboBox.Items.Add("Oktober");
+            bulanComboBox.Items.Add("November");
+            bulanComboBox.Items.Add("Desember");
         }
     }
 }
