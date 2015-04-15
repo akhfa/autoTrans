@@ -15,6 +15,7 @@ namespace autoTrans
         public LaporanBulanan()
         {
             InitializeComponent();
+            DBConnect db;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,10 +30,15 @@ namespace autoTrans
 
         private void LaporanBulanan_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void laporanHarianLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

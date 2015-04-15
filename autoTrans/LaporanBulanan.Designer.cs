@@ -33,23 +33,31 @@
             this.tahuntextBox = new System.Windows.Forms.TextBox();
             this.tahunLabel = new System.Windows.Forms.Label();
             this.bulanComboBox = new System.Windows.Forms.ComboBox();
+            this.cetakButton = new System.Windows.Forms.Button();
             this.bulanLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tanggalLabel = new System.Windows.Forms.Label();
-            this.ketTextBox = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.namaLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.jumlahTextBox = new System.Windows.Forms.TextBox();
+            this.submitButton = new System.Windows.Forms.Button();
             this.biayaLabel = new System.Windows.Forms.Label();
             this.biayaTextBox = new System.Windows.Forms.TextBox();
-            this.cetakButton = new System.Windows.Forms.Button();
-            this.submitButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.jumlahTextBox = new System.Windows.Forms.TextBox();
+            this.namaLabel = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ketTextBox = new System.Windows.Forms.TextBox();
+            this.tanggalLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.laporanHarianLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NumColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TanggalColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KeteranganColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BiayaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JumlahColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubtotalColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -91,6 +99,15 @@
             this.bulanComboBox.Size = new System.Drawing.Size(75, 27);
             this.bulanComboBox.TabIndex = 3;
             // 
+            // cetakButton
+            // 
+            this.cetakButton.Location = new System.Drawing.Point(85, 91);
+            this.cetakButton.Name = "cetakButton";
+            this.cetakButton.Size = new System.Drawing.Size(75, 29);
+            this.cetakButton.TabIndex = 2;
+            this.cetakButton.Text = "Cetak";
+            this.cetakButton.UseVisualStyleBackColor = true;
+            // 
             // bulanLabel
             // 
             this.bulanLabel.AutoSize = true;
@@ -119,54 +136,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Pengeluaran";
             // 
-            // tanggalLabel
+            // submitButton
             // 
-            this.tanggalLabel.AutoSize = true;
-            this.tanggalLabel.Location = new System.Drawing.Point(21, 34);
-            this.tanggalLabel.Name = "tanggalLabel";
-            this.tanggalLabel.Size = new System.Drawing.Size(55, 19);
-            this.tanggalLabel.TabIndex = 0;
-            this.tanggalLabel.Text = "Tanggal";
-            this.tanggalLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // ketTextBox
-            // 
-            this.ketTextBox.Location = new System.Drawing.Point(102, 62);
-            this.ketTextBox.Name = "ketTextBox";
-            this.ketTextBox.Size = new System.Drawing.Size(344, 26);
-            this.ketTextBox.TabIndex = 1;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 26);
-            this.dateTimePicker1.TabIndex = 2;
-            // 
-            // namaLabel
-            // 
-            this.namaLabel.AutoSize = true;
-            this.namaLabel.Location = new System.Drawing.Point(21, 66);
-            this.namaLabel.Name = "namaLabel";
-            this.namaLabel.Size = new System.Drawing.Size(79, 19);
-            this.namaLabel.TabIndex = 3;
-            this.namaLabel.Text = "Keterangan";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(265, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Jumlah/Unit";
-            // 
-            // jumlahTextBox
-            // 
-            this.jumlahTextBox.Location = new System.Drawing.Point(346, 95);
-            this.jumlahTextBox.Name = "jumlahTextBox";
-            this.jumlahTextBox.Size = new System.Drawing.Size(50, 26);
-            this.jumlahTextBox.TabIndex = 4;
+            this.submitButton.Location = new System.Drawing.Point(371, 127);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 29);
+            this.submitButton.TabIndex = 6;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
             // 
             // biayaLabel
             // 
@@ -184,28 +161,59 @@
             this.biayaTextBox.Size = new System.Drawing.Size(157, 26);
             this.biayaTextBox.TabIndex = 6;
             // 
-            // cetakButton
+            // label3
             // 
-            this.cetakButton.Location = new System.Drawing.Point(85, 91);
-            this.cetakButton.Name = "cetakButton";
-            this.cetakButton.Size = new System.Drawing.Size(75, 29);
-            this.cetakButton.TabIndex = 2;
-            this.cetakButton.Text = "Cetak";
-            this.cetakButton.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(265, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Jumlah/Unit";
             // 
-            // submitButton
+            // jumlahTextBox
             // 
-            this.submitButton.Location = new System.Drawing.Point(371, 127);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 29);
-            this.submitButton.TabIndex = 6;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
+            this.jumlahTextBox.Location = new System.Drawing.Point(346, 95);
+            this.jumlahTextBox.Name = "jumlahTextBox";
+            this.jumlahTextBox.Size = new System.Drawing.Size(50, 26);
+            this.jumlahTextBox.TabIndex = 4;
+            // 
+            // namaLabel
+            // 
+            this.namaLabel.AutoSize = true;
+            this.namaLabel.Location = new System.Drawing.Point(21, 66);
+            this.namaLabel.Name = "namaLabel";
+            this.namaLabel.Size = new System.Drawing.Size(79, 19);
+            this.namaLabel.TabIndex = 3;
+            this.namaLabel.Text = "Keterangan";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(102, 30);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(166, 26);
+            this.dateTimePicker1.TabIndex = 2;
+            // 
+            // ketTextBox
+            // 
+            this.ketTextBox.Location = new System.Drawing.Point(102, 62);
+            this.ketTextBox.Name = "ketTextBox";
+            this.ketTextBox.Size = new System.Drawing.Size(344, 26);
+            this.ketTextBox.TabIndex = 1;
+            // 
+            // tanggalLabel
+            // 
+            this.tanggalLabel.AutoSize = true;
+            this.tanggalLabel.Location = new System.Drawing.Point(21, 34);
+            this.tanggalLabel.Name = "tanggalLabel";
+            this.tanggalLabel.Size = new System.Drawing.Size(55, 19);
+            this.tanggalLabel.TabIndex = 0;
+            this.tanggalLabel.Text = "Tanggal";
+            this.tanggalLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 263);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 346);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(634, 231);
             this.pictureBox1.TabIndex = 6;
@@ -222,11 +230,69 @@
             this.laporanHarianLabel.Text = "Laporan Bulanan";
             this.laporanHarianLabel.Click += new System.EventHandler(this.laporanHarianLabel_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NumColumn,
+            this.TanggalColumn,
+            this.KeteranganColumn,
+            this.BiayaColumn,
+            this.JumlahColumn,
+            this.SubtotalColumn});
+            this.dataGridView1.Location = new System.Drawing.Point(14, 252);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(632, 150);
+            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // NumColumn
+            // 
+            this.NumColumn.HeaderText = "No";
+            this.NumColumn.Name = "NumColumn";
+            this.NumColumn.ReadOnly = true;
+            this.NumColumn.Width = 30;
+            // 
+            // TanggalColumn
+            // 
+            this.TanggalColumn.HeaderText = "Tanggal";
+            this.TanggalColumn.Name = "TanggalColumn";
+            this.TanggalColumn.ReadOnly = true;
+            // 
+            // KeteranganColumn
+            // 
+            this.KeteranganColumn.HeaderText = "Keterangan";
+            this.KeteranganColumn.Name = "KeteranganColumn";
+            this.KeteranganColumn.ReadOnly = true;
+            this.KeteranganColumn.Width = 200;
+            // 
+            // BiayaColumn
+            // 
+            this.BiayaColumn.HeaderText = "Biaya";
+            this.BiayaColumn.Name = "BiayaColumn";
+            this.BiayaColumn.ReadOnly = true;
+            // 
+            // JumlahColumn
+            // 
+            this.JumlahColumn.HeaderText = "Jumlah";
+            this.JumlahColumn.Name = "JumlahColumn";
+            this.JumlahColumn.ReadOnly = true;
+            this.JumlahColumn.Width = 50;
+            // 
+            // SubtotalColumn
+            // 
+            this.SubtotalColumn.HeaderText = "Subtotal";
+            this.SubtotalColumn.Name = "SubtotalColumn";
+            this.SubtotalColumn.ReadOnly = true;
+            this.SubtotalColumn.Width = 110;
+            // 
             // LaporanBulanan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 506);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.laporanHarianLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -239,6 +305,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +331,13 @@
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label laporanHarianLabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource pengeluaranBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TanggalColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KeteranganColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BiayaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn JumlahColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubtotalColumn;
     }
 }
