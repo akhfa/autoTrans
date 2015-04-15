@@ -71,6 +71,8 @@
             this.kursi5 = new System.Windows.Forms.PictureBox();
             this.kursi7 = new System.Windows.Forms.PictureBox();
             this.kursi6 = new System.Windows.Forms.PictureBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.hargaTextBox = new System.Windows.Forms.TextBox();
             this.pelangganGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).BeginInit();
@@ -215,6 +217,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.hargaTextBox);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.mobilComboBox);
             this.groupBox1.Controls.Add(this.label13);
@@ -255,7 +259,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(45, 23);
+            this.label14.Location = new System.Drawing.Point(45, 19);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(40, 16);
             this.label14.TabIndex = 46;
@@ -264,9 +268,9 @@
             // mobilComboBox
             // 
             this.mobilComboBox.FormattingEnabled = true;
-            this.mobilComboBox.Location = new System.Drawing.Point(111, 20);
+            this.mobilComboBox.Location = new System.Drawing.Point(111, 16);
             this.mobilComboBox.Name = "mobilComboBox";
-            this.mobilComboBox.Size = new System.Drawing.Size(121, 23);
+            this.mobilComboBox.Size = new System.Drawing.Size(100, 23);
             this.mobilComboBox.TabIndex = 45;
             // 
             // label13
@@ -380,7 +384,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 77);
+            this.label1.Location = new System.Drawing.Point(69, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 32;
@@ -414,7 +418,7 @@
             // 
             this.kursi1.ImageLocation = "";
             this.kursi1.InitialImage = null;
-            this.kursi1.Location = new System.Drawing.Point(48, 68);
+            this.kursi1.Location = new System.Drawing.Point(48, 78);
             this.kursi1.Name = "kursi1";
             this.kursi1.Size = new System.Drawing.Size(61, 46);
             this.kursi1.TabIndex = 18;
@@ -430,7 +434,7 @@
             // 
             // kursiSupir
             // 
-            this.kursiSupir.Location = new System.Drawing.Point(161, 68);
+            this.kursiSupir.Location = new System.Drawing.Point(161, 78);
             this.kursiSupir.Name = "kursiSupir";
             this.kursiSupir.Size = new System.Drawing.Size(61, 46);
             this.kursiSupir.TabIndex = 19;
@@ -500,6 +504,22 @@
             this.kursi6.Size = new System.Drawing.Size(61, 46);
             this.kursi6.TabIndex = 24;
             this.kursi6.TabStop = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(45, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 16);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Harga";
+            // 
+            // hargaTextBox
+            // 
+            this.hargaTextBox.Location = new System.Drawing.Point(111, 45);
+            this.hargaTextBox.Name = "hargaTextBox";
+            this.hargaTextBox.Size = new System.Drawing.Size(100, 23);
+            this.hargaTextBox.TabIndex = 48;
             // 
             // Tiket
             // 
@@ -580,6 +600,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox mobilComboBox;
+        private System.Windows.Forms.TextBox hargaTextBox;
+        private System.Windows.Forms.Label label15;
     }
 }
 

@@ -60,12 +60,14 @@ namespace autoTrans
             kursi12.Image = Image.FromFile("src/kursikosong.jpg");
             kursi13.Image = Image.FromFile("src/kursikosong.jpg");
 
+            hargaTextBox.Text = "85000";
             //mobilComboBox.Items.Add("AA 1234 DD");
             //mobilComboBox.Items.Add("AA 5678 DD");
             //MessageBox.Show(kursi1.Size.ToString());
             //MessageBox.Show(kursi1.Image.Size.ToString());
 
             connection = new DBConnect();
+
         }
 
         
@@ -78,7 +80,8 @@ namespace autoTrans
 
         private void loadDropdownMobil()
         {
-            List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, "2015-04-21");
+            //List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, "2015-04-21");
+            List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"));
             foreach(string mobil in daftarMobil)
             {
                 mobilComboBox.Items.Add(mobil);
