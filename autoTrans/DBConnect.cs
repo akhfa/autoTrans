@@ -99,6 +99,28 @@ namespace autoTrans
                 this.CloseConnection();
             }
         }
+        
+        public List<String> getCarList(String jam, String tanggal)
+        {
+            string query = "SELECT plat_nomor FROM trans_mobil natural join jadwal WHERE jadwal.id_jadwal = trans_mobil.id_jadwal and tanggal = '" + tanggal + " 00:00:00' and jam = '" + jam + "'";
+            List<string> daftarMobil = new List<string>();
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    daftarMobil.Add(dataReader["plat_nomor"].ToString());
+                }
+                dataReader.Close();
+                this.CloseConnection();
+            }
+            else
+            {
+                MessageBox.Show("Gagal meload daftar mobil yang berangkat pada jam ini.");
+            }
+            return daftarMobil;
+        }
 
         /*
         //Update statement

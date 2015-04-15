@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace autoTrans
 {
     public partial class Tiket : Form
     {
+        DBConnect connection;
         public Tiket()
         {
             InitializeComponent();
@@ -58,10 +60,36 @@ namespace autoTrans
             kursi12.Image = Image.FromFile("src/kursikosong.jpg");
             kursi13.Image = Image.FromFile("src/kursikosong.jpg");
 
-            mobilComboBox.Items.Add("AA 1234 DD");
-            mobilComboBox.Items.Add("AA 5678 DD");
+            hargaTextBox.Text = "85000";
+            hargaTextBox.Enabled = false;
+
+            mobilComboBox.Enabled = false;
+            //mobilComboBox.Items.Add("AA 1234 DD");
+            //mobilComboBox.Items.Add("AA 5678 DD");
             //MessageBox.Show(kursi1.Size.ToString());
             //MessageBox.Show(kursi1.Image.Size.ToString());
+
+            connection = new DBConnect();
+
+        }
+
+        
+        private void cekKursiButton_Click(object sender, EventArgs e)
+        {
+            //connection.Insert("INSERT INTO mobil values ('AA3011DD', 'Wawan')");
+            loadDropdownMobil();
+            mobilComboBox.Enabled = true;
+            hargaTextBox.Enabled = true;
+        }
+
+        private void loadDropdownMobil()
+        {
+            //List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, "2015-04-21");
+            List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"));
+            foreach(string mobil in daftarMobil)
+            {
+                mobilComboBox.Items.Add(mobil);
+            }
         }
     }
 }
