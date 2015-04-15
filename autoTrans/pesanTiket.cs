@@ -61,6 +61,9 @@ namespace autoTrans
             kursi13.Image = Image.FromFile("src/kursikosong.jpg");
 
             hargaTextBox.Text = "85000";
+            hargaTextBox.Enabled = false;
+
+            mobilComboBox.Enabled = false;
             //mobilComboBox.Items.Add("AA 1234 DD");
             //mobilComboBox.Items.Add("AA 5678 DD");
             //MessageBox.Show(kursi1.Size.ToString());
@@ -75,7 +78,8 @@ namespace autoTrans
         {
             //connection.Insert("INSERT INTO mobil values ('AA3011DD', 'Wawan')");
             loadDropdownMobil();
-            MessageBox.Show("Ok");
+            mobilComboBox.Enabled = true;
+            hargaTextBox.Enabled = true;
         }
 
         private void loadDropdownMobil()
