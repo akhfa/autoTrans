@@ -33,18 +33,18 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.judulLoginLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tampilkanButton = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.judulLoginLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.bulanComboBox = new System.Windows.Forms.ComboBox();
-            this.tahunLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tahunLabel = new System.Windows.Forms.Label();
+            this.bulanComboBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,31 +81,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lihat Laporan";
             // 
-            // judulLoginLabel
+            // tampilkanButton
             // 
-            this.judulLoginLabel.AutoSize = true;
-            this.judulLoginLabel.Font = new System.Drawing.Font("Motorwerk", 50F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.judulLoginLabel.Location = new System.Drawing.Point(182, 19);
-            this.judulLoginLabel.Name = "judulLoginLabel";
-            this.judulLoginLabel.Size = new System.Drawing.Size(286, 51);
-            this.judulLoginLabel.TabIndex = 2;
-            this.judulLoginLabel.Text = "Laporan";
+            this.tampilkanButton.Location = new System.Drawing.Point(163, 153);
+            this.tampilkanButton.Name = "tampilkanButton";
+            this.tampilkanButton.Size = new System.Drawing.Size(86, 28);
+            this.tampilkanButton.TabIndex = 4;
+            this.tampilkanButton.Text = "Tampilkan";
+            this.tampilkanButton.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dateTimePicker2
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(49, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Dari";
+            this.dateTimePicker2.Location = new System.Drawing.Point(49, 111);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.TabIndex = 3;
             // 
             // label2
             // 
@@ -116,21 +106,31 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Sampai";
             // 
-            // dateTimePicker2
+            // label1
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(49, 111);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 3;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dari";
             // 
-            // tampilkanButton
+            // dateTimePicker1
             // 
-            this.tampilkanButton.Location = new System.Drawing.Point(163, 153);
-            this.tampilkanButton.Name = "tampilkanButton";
-            this.tampilkanButton.Size = new System.Drawing.Size(86, 28);
-            this.tampilkanButton.TabIndex = 4;
-            this.tampilkanButton.Text = "Tampilkan";
-            this.tampilkanButton.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(49, 48);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // judulLoginLabel
+            // 
+            this.judulLoginLabel.AutoSize = true;
+            this.judulLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judulLoginLabel.Location = new System.Drawing.Point(182, 19);
+            this.judulLoginLabel.Name = "judulLoginLabel";
+            this.judulLoginLabel.Size = new System.Drawing.Size(284, 76);
+            this.judulLoginLabel.TabIndex = 2;
+            this.judulLoginLabel.Text = "Laporan";
             // 
             // groupBox2
             // 
@@ -147,31 +147,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cetak Laporan Bulanan";
             // 
-            // label3
+            // textBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Bulan";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(174, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cetak";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // bulanComboBox
-            // 
-            this.bulanComboBox.FormattingEnabled = true;
-            this.bulanComboBox.Location = new System.Drawing.Point(85, 38);
-            this.bulanComboBox.Name = "bulanComboBox";
-            this.bulanComboBox.Size = new System.Drawing.Size(164, 27);
-            this.bulanComboBox.TabIndex = 3;
+            this.textBox1.Location = new System.Drawing.Point(85, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(164, 26);
+            this.textBox1.TabIndex = 6;
             // 
             // tahunLabel
             // 
@@ -182,12 +163,31 @@
             this.tahunLabel.TabIndex = 5;
             this.tahunLabel.Text = "Tahun";
             // 
-            // textBox1
+            // bulanComboBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 26);
-            this.textBox1.TabIndex = 6;
+            this.bulanComboBox.FormattingEnabled = true;
+            this.bulanComboBox.Location = new System.Drawing.Point(85, 38);
+            this.bulanComboBox.Name = "bulanComboBox";
+            this.bulanComboBox.Size = new System.Drawing.Size(164, 27);
+            this.bulanComboBox.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(174, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Cetak";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Bulan";
             // 
             // laporanForm
             // 

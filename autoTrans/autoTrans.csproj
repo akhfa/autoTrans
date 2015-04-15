@@ -51,6 +51,12 @@
     <Compile Include="FormLaporanOwner.Designer.cs">
       <DependentUpon>FormLaporanOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="LaporanBulanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaporanBulanan.Designer.cs">
+      <DependentUpon>LaporanBulanan.cs</DependentUpon>
+    </Compile>
     <Compile Include="LaporanHarianManajer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormLaporanOwner.resx">
       <DependentUpon>FormLaporanOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaporanBulanan.resx">
+      <DependentUpon>LaporanBulanan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaporanHarianManajer.resx">
       <DependentUpon>LaporanHarianManajer.cs</DependentUpon>
