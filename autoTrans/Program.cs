@@ -17,8 +17,8 @@ namespace autoTrans
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Tiket());
-            //Application.Run(new LaporanHarianManajer());
-            Application.Run(new Tiket());
+            Application.Run(new LaporanBulanan());
+            //Application.Run(new Tiket());
             //Application.Run(new LoginForm());
             //Application.Run(new laporanForm());
         }
