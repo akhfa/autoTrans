@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace autoTrans
 {
-    public partial class Tiket : Form
+    public partial class penambahanMobil : Form
     {
-        public Tiket()
+        public penambahanMobil()
         {
             InitializeComponent();
             waktuComboBox.Items.Add("05.00 WIB");
@@ -60,8 +60,6 @@ namespace autoTrans
 
             mobilComboBox.Items.Add("AA 1234 DD");
             mobilComboBox.Items.Add("AA 5678 DD");
-            //MessageBox.Show(kursi1.Size.ToString());
-            //MessageBox.Show(kursi1.Image.Size.ToString());
         }
     }
 }

@@ -69,6 +69,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="penambahanMobil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="penambahanMobil.Designer.cs">
+      <DependentUpon>penambahanMobil.cs</DependentUpon>
+    </Compile>
     <Compile Include="pesanTiket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="penambahanMobil.resx">
+      <DependentUpon>penambahanMobil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pesanTiket.resx">
       <DependentUpon>pesanTiket.cs</DependentUpon>
