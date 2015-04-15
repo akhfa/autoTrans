@@ -42,6 +42,8 @@
             this.namaTextBox = new System.Windows.Forms.TextBox();
             this.simpanButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.mobilComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.kursi5 = new System.Windows.Forms.PictureBox();
             this.kursi7 = new System.Windows.Forms.PictureBox();
             this.kursi6 = new System.Windows.Forms.PictureBox();
-            this.mobilComboBox = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.pelangganGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).BeginInit();
@@ -127,6 +127,7 @@
             this.cekKursiButton.TabIndex = 13;
             this.cekKursiButton.Text = "Cek Kursi";
             this.cekKursiButton.UseVisualStyleBackColor = true;
+            this.cekKursiButton.Click += new System.EventHandler(this.cekKursiButton_Click);
             // 
             // trayekComboBox
             // 
@@ -250,6 +251,23 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kursi";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(45, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Mobil";
+            // 
+            // mobilComboBox
+            // 
+            this.mobilComboBox.FormattingEnabled = true;
+            this.mobilComboBox.Location = new System.Drawing.Point(111, 20);
+            this.mobilComboBox.Name = "mobilComboBox";
+            this.mobilComboBox.Size = new System.Drawing.Size(121, 23);
+            this.mobilComboBox.TabIndex = 45;
             // 
             // label13
             // 
@@ -482,23 +500,6 @@
             this.kursi6.Size = new System.Drawing.Size(61, 46);
             this.kursi6.TabIndex = 24;
             this.kursi6.TabStop = false;
-            // 
-            // mobilComboBox
-            // 
-            this.mobilComboBox.FormattingEnabled = true;
-            this.mobilComboBox.Location = new System.Drawing.Point(111, 20);
-            this.mobilComboBox.Name = "mobilComboBox";
-            this.mobilComboBox.Size = new System.Drawing.Size(121, 23);
-            this.mobilComboBox.TabIndex = 45;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(45, 23);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 16);
-            this.label14.TabIndex = 46;
-            this.label14.Text = "Mobil";
             // 
             // Tiket
             // 
