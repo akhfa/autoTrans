@@ -218,17 +218,13 @@ namespace autoTrans
         {
         }
         */
-        //Select statement
-        public List<string>[] Select(string _query)
+        //Select Pemasukan
+        public List<Pemasukan> getPemasukan(string month, string year)
         {
-            string query = _query;
-
+            int hargaTiket = 85000;
+            string query = "SELECT tanggal_keberangkatan AS tanggal, COUNT(id_transaksi) AS jumlah FROM transaksi WHERE tanggal_keberangkatan LIKE '" + year + "-" + month + "%' GROUP BY tanggal_keberangkatan ORDER BY tanggal_keberangkatan";
             //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
-
+            List<Pemasukan> listPemasukan = new List<Pemasukan>();
             //Open connection
             if (this.OpenConnection() == true)
             {
@@ -236,13 +232,20 @@ namespace autoTrans
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
+                int no = 1;
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+                    listPemasukan.Add(new Pemasukan()
+                    {
+                        number = no,
+                        tanggal = dataReader["tanggal"].ToString(), 
+                        namaBarang = "Tiket",
+                        harga = hargaTiket,
+                        jumlah = Convert.ToInt32(dataReader["jumlah"]),
+                        subtotal = hargaTiket * Convert.ToInt32(dataReader["jumlah"])
+                    });
+                    no++;
                 }
 
                 //close Data Reader
@@ -252,14 +255,56 @@ namespace autoTrans
                 this.CloseConnection();
 
                 //return list to be displayed
-                return list;
+                return listPemasukan;
             }
             else
             {
-                return list;
+                return listPemasukan;
             }
         }
+        //Select Pengeluaran
+        public List<Pengeluaran> getPengeluaran(string month, string year)
+        {
+            string query = "SELECT * FROM pengeluaran WHERE tanggal LIKE '"+year+"-"+month+"%'";
+            //Create a list to store the result
+            List<Pengeluaran> listPengeluaran = new List<Pengeluaran>();
+            
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int no = 1;
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    listPengeluaran.Add(new Pengeluaran() {
+                        number = no, 
+                        tanggal = dataReader["tanggal"].ToString(), 
+                        namaBarang = dataReader["nama_barang"].ToString(),
+                        harga = (int) dataReader["harga"],
+                        jumlah = (int) dataReader["jumlah"],
+                        subtotal = (int)dataReader["harga"] * (int)dataReader["jumlah"]
+                    });
+                    no++;
+                }
 
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return listPengeluaran;
+            }
+            else
+            {
+                return listPengeluaran;
+            }
+        }
         /*public List<stats> SelectStats(string d1, string d2)
         {
             List<stats> ListStats = new List<stats>();
@@ -295,10 +340,39 @@ namespace autoTrans
         }
         /*
         //Count statement
-        public int Count()
+        public int Count(string _query)
         {
-        }
+            string query = _query;
+            int Count = -1;
 
+            //Open Connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Mysql Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //ExecuteScalar will return one value
+                Object result = cmd.ExecuteScalar().ToString();
+                if (result != "")
+                {
+                    Count = Convert.ToInt32(result);
+                }
+                else
+                {
+                    Count = 0;
+                }
+
+                //close Connection
+                this.CloseConnection();
+
+                return Count;
+            }
+            else
+            {
+                return Count;
+            }
+        }
+        /*
         //Backup
         public void Backup()
         {
