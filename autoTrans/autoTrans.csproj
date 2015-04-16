@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pemasukan.cs" />
+    <Compile Include="Pengeluaran.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="FormLaporanOwner.cs">
       <SubType>Form</SubType>
