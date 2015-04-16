@@ -45,29 +45,22 @@ namespace autoTrans
             label12.Text = "12";
             label13.Text = "13";
 
+            PictureBox[] listOfPictureBox = {kursi1, kursi2, kursi3, kursi4, kursi5, kursi6,
+                                            kursi7, kursi8, kursi9, kursi10, kursi11, kursi12, kursi13};
+
             kursiSupir.Image = Image.FromFile("src/kursisupir.jpg");
-            kursi1.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi2.Image = Image.FromFile("src/kursiterisi.jpg");
-            kursi3.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi4.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi5.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi6.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi7.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi8.Image = Image.FromFile("src/kursiterisi.jpg");
-            kursi9.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi10.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi11.Image = Image.FromFile("src/kursiterisi.jpg");
-            kursi12.Image = Image.FromFile("src/kursikosong.jpg");
-            kursi13.Image = Image.FromFile("src/kursikosong.jpg");
+
+            foreach(PictureBox pic in listOfPictureBox)
+            {
+                pic.Image = Image.FromFile("src/kursisupir.jpg");
+            }
 
             hargaTextBox.Text = "85000";
             hargaTextBox.Enabled = false;
 
             mobilComboBox.Enabled = false;
-            //mobilComboBox.Items.Add("AA 1234 DD");
-            //mobilComboBox.Items.Add("AA 5678 DD");
-            //MessageBox.Show(kursi1.Size.ToString());
-            //MessageBox.Show(kursi1.Image.Size.ToString());
+
+            this.disableChair();
 
             connection = new DBConnect();
 
@@ -84,11 +77,35 @@ namespace autoTrans
 
         private void loadDropdownMobil()
         {
-            //List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, "2015-04-21");
             List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"));
             foreach(string mobil in daftarMobil)
             {
                 mobilComboBox.Items.Add(mobil);
+            }
+        }
+
+        private void simpanButton_Click(object sender, EventArgs e)
+        {
+            int idPelanggan = connection.isExist(namaTextBox.Text, teleponTextBox.Text);
+            if(idPelanggan == 0) //Jika penumpang not exist
+            {
+                connection.insertNewPelanggan(namaTextBox.Text, teleponTextBox.Text);
+                idPelanggan = connection.isExist(namaTextBox.Text, teleponTextBox.Text);
+            }
+            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, "Bandung-depok", 3, "2015-04-21", 4, 1, "D 7648 AJ", "85000"))
+                MessageBox.Show("Insert transaksi berhasil");
+            else
+                MessageBox.Show("Insert transaksi gagal");
+        }
+
+        private void disableChair()
+        {
+            foreach(Control c in this.Controls)
+            {
+                if(c is PictureBox)
+                {
+                    c.Enabled = false;
+                }
             }
         }
     }
