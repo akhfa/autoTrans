@@ -14,6 +14,9 @@ namespace autoTrans
     public partial class Tiket : Form
     {
         DBConnect connection;
+        int statusPembayaran = 0;
+        int noKursi = 0;
+        PictureBox[] listOfPictureBox = new PictureBox[13];
         public Tiket()
         {
             InitializeComponent();
@@ -45,8 +48,19 @@ namespace autoTrans
             label12.Text = "12";
             label13.Text = "13";
 
-            PictureBox[] listOfPictureBox = {kursi1, kursi2, kursi3, kursi4, kursi5, kursi6,
-                                            kursi7, kursi8, kursi9, kursi10, kursi11, kursi12, kursi13};
+            listOfPictureBox[0] = kursi1;
+            listOfPictureBox[1] = kursi2;
+            listOfPictureBox[2] = kursi3;
+            listOfPictureBox[3] = kursi4;
+            listOfPictureBox[4] = kursi5;
+            listOfPictureBox[5] = kursi6;
+            listOfPictureBox[6] = kursi7;
+            listOfPictureBox[7] = kursi8;
+            listOfPictureBox[8] = kursi9;
+            listOfPictureBox[9] = kursi10;
+            listOfPictureBox[10] = kursi11;
+            listOfPictureBox[11] = kursi12;
+            listOfPictureBox[12] = kursi13;
 
             kursiSupir.Image = Image.FromFile("src/kursisupir.jpg");
 
@@ -71,7 +85,12 @@ namespace autoTrans
         
         private void cekKursiButton_Click(object sender, EventArgs e)
         {
-            
+            List<string> daftarKursiIsi = connection.getKursiIsi(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text);
+            foreach(string kursi in daftarKursiIsi)
+            {
+                listOfPictureBox[Convert.ToInt32(kursi)].Image = Image.FromFile("src/kursiterisi.jpg");
+                //MessageBox.Show(kursi);
+            }
         }
 
         private void loadDropdownMobil()
@@ -94,8 +113,20 @@ namespace autoTrans
             }
 
             //getIdJadwal
+            int idJadwal = this.getIdJadwal();
+            
+
+            //MessageBox.Show(idJadwal.ToString());
+            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), 4, 1, mobilComboBox.Text, hargaTextBox.Text))
+                MessageBox.Show("Insert transaksi berhasil");
+            else
+                MessageBox.Show("Insert transaksi gagal");
+        }
+
+        private int getIdJadwal()
+        {
             int idJadwal = 0;
-            switch(waktuComboBox.Text)
+            switch (waktuComboBox.Text)
             {
                 case "05.00 WIB":
                     idJadwal = 1;
@@ -122,12 +153,7 @@ namespace autoTrans
                     idJadwal = 8;
                     break;
             }
-
-            //MessageBox.Show(idJadwal.ToString());
-            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), 4, 1, mobilComboBox.Text, hargaTextBox.Text))
-                MessageBox.Show("Insert transaksi berhasil");
-            else
-                MessageBox.Show("Insert transaksi gagal");
+            return idJadwal;
         }
 
         private void disableChair()
@@ -152,6 +178,71 @@ namespace autoTrans
             loadDropdownMobil();
             mobilComboBox.Enabled = true;
             hargaTextBox.Enabled = true;
+        }
+
+        private void kursi1_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 1;
+        }
+
+        private void kursi2_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 2;
+        }
+
+        private void kursi3_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 3;
+        }
+
+        private void kursi4_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 4;
+        }
+
+        private void kursi5_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 5;
+        }
+
+        private void kursi6_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 6;
+        }
+
+        private void kursi7_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 7;
+        }
+
+        private void kursi8_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 8;
+        }
+
+        private void kursi9_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 9;
+        }
+
+        private void kursi10_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 10;
+        }
+
+        private void kursi11_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 11;
+        }
+
+        private void kursi12_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 12;
+        }
+
+        private void kursi13_MouseClick(object sender, MouseEventArgs e)
+        {
+            noKursi = 13;
         }
     }
 }

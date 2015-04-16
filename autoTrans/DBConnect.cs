@@ -119,7 +119,24 @@ namespace autoTrans
             return Insert(query);
         }
 
-
+        public List<string> getKursiIsi(string date, int id_jadwal, string plat_nomor)
+        {
+            List<string> daftarKursiIsi = new List<string>();
+            string query = "SELECT no_kursi FROM transaksi where tanggal_keberangkatan = '" + date + "' and id_jadwal= '" + id_jadwal+ "' and mobil = '" + plat_nomor +"'";
+            //SELECT no_kursi FROM transaksi where tanggal_keberangkatan='2015-04-21' and id_jadwal='5' and mobil='D 7648 AJ'
+            if(this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    //MessageBox.Show(dataReader["no_kursi"].ToString());
+                    daftarKursiIsi.Add(dataReader["no_kursi"].ToString());
+                }
+                this.CloseConnection();
+            }
+            return daftarKursiIsi;
+        }
         //Mengecek apakah pelanggan dengan nama name dan nomor telepon number ada di database
         //Jika ada, kembalikan id_pelanggan, jika enggak, kembalikan 0
         public int isExist(string name, string number)

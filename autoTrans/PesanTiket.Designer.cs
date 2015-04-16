@@ -418,6 +418,7 @@
             this.kursi13.Size = new System.Drawing.Size(61, 46);
             this.kursi13.TabIndex = 31;
             this.kursi13.TabStop = false;
+            this.kursi13.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi13_MouseClick);
             // 
             // kursi3
             // 
@@ -426,6 +427,7 @@
             this.kursi3.Size = new System.Drawing.Size(61, 46);
             this.kursi3.TabIndex = 21;
             this.kursi3.TabStop = false;
+            this.kursi3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi3_MouseClick);
             // 
             // kursi12
             // 
@@ -434,6 +436,7 @@
             this.kursi12.Size = new System.Drawing.Size(61, 46);
             this.kursi12.TabIndex = 30;
             this.kursi12.TabStop = false;
+            this.kursi12.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi12_MouseClick);
             // 
             // kursi1
             // 
@@ -444,6 +447,7 @@
             this.kursi1.Size = new System.Drawing.Size(61, 46);
             this.kursi1.TabIndex = 18;
             this.kursi1.TabStop = false;
+            this.kursi1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi1_MouseClick);
             // 
             // kursi11
             // 
@@ -452,6 +456,7 @@
             this.kursi11.Size = new System.Drawing.Size(61, 46);
             this.kursi11.TabIndex = 29;
             this.kursi11.TabStop = false;
+            this.kursi11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi11_MouseClick);
             // 
             // kursiSupir
             // 
@@ -468,6 +473,7 @@
             this.kursi10.Size = new System.Drawing.Size(61, 46);
             this.kursi10.TabIndex = 28;
             this.kursi10.TabStop = false;
+            this.kursi10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi10_MouseClick);
             // 
             // kursi2
             // 
@@ -476,6 +482,7 @@
             this.kursi2.Size = new System.Drawing.Size(61, 46);
             this.kursi2.TabIndex = 20;
             this.kursi2.TabStop = false;
+            this.kursi2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi2_MouseClick);
             // 
             // kursi9
             // 
@@ -484,6 +491,7 @@
             this.kursi9.Size = new System.Drawing.Size(61, 46);
             this.kursi9.TabIndex = 27;
             this.kursi9.TabStop = false;
+            this.kursi9.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi9_MouseClick);
             // 
             // kursi4
             // 
@@ -492,6 +500,7 @@
             this.kursi4.Size = new System.Drawing.Size(61, 46);
             this.kursi4.TabIndex = 22;
             this.kursi4.TabStop = false;
+            this.kursi4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi4_MouseClick);
             // 
             // kursi8
             // 
@@ -500,6 +509,7 @@
             this.kursi8.Size = new System.Drawing.Size(61, 46);
             this.kursi8.TabIndex = 26;
             this.kursi8.TabStop = false;
+            this.kursi8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi8_MouseClick);
             // 
             // kursi5
             // 
@@ -508,6 +518,7 @@
             this.kursi5.Size = new System.Drawing.Size(61, 46);
             this.kursi5.TabIndex = 23;
             this.kursi5.TabStop = false;
+            this.kursi5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi5_MouseClick);
             // 
             // kursi7
             // 
@@ -517,6 +528,7 @@
             this.kursi7.Size = new System.Drawing.Size(61, 46);
             this.kursi7.TabIndex = 25;
             this.kursi7.TabStop = false;
+            this.kursi7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi7_MouseClick);
             // 
             // kursi6
             // 
@@ -525,6 +537,7 @@
             this.kursi6.Size = new System.Drawing.Size(61, 46);
             this.kursi6.TabIndex = 24;
             this.kursi6.TabStop = false;
+            this.kursi6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi6_MouseClick);
             // 
             // lunasCheckBox
             // 
