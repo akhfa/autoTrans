@@ -26,8 +26,11 @@ namespace autoTrans
         //Initialize values
         private void Initialize()
         {
+            //server = "akhfa.in";
             server = "localhost";
             database = "si_autotrans";
+            //uid = "si_autotrans";
+            //password = "autotransaya";
             uid = "root";
             password = "";
             string connectionString;
@@ -182,6 +185,7 @@ namespace autoTrans
             return daftarMobil;
         }
 
+        
         /*
         //Update statement
         public void Update()
@@ -233,6 +237,40 @@ namespace autoTrans
             {
                 return list;
             }
+        }
+
+        /*public List<stats> SelectStats(string d1, string d2)
+        {
+            List<stats> ListStats = new List<stats>();
+
+            return ListStats;
+        }*/
+
+        public List<string>[] SelectStats(string d1, string d2)
+        {
+            List<string>[] ListStats = new List<string>[2];
+            ListStats[0] = new List<string>();
+            ListStats[1] = new List<string>();
+
+            string query = "SELECT * FROM `transaksi` natural join jadwal WHERE (tanggal_keberangkatan BETWEEN '"+d1+"' AND '"+d2+"')";
+            if(this.OpenConnection()==true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while(dataReader.Read())
+                {
+                    ListStats[0].Add(dataReader["jam"] + "");
+                    ListStats[1].Add(dataReader["tanggal_keberangkatan"] + "");
+                }
+                dataReader.Close();
+                this.CloseConnection();
+            }
+            else 
+            {
+                MessageBox.Show("Error dalam menghubungi database");
+            }
+            return ListStats;
         }
         /*
         //Count statement
