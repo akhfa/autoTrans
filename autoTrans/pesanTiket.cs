@@ -86,13 +86,46 @@ namespace autoTrans
 
         private void simpanButton_Click(object sender, EventArgs e)
         {
+            //getIdPelanggan
             int idPelanggan = connection.isExist(namaTextBox.Text, teleponTextBox.Text);
             if(idPelanggan == 0) //Jika penumpang not exist
             {
                 connection.insertNewPelanggan(namaTextBox.Text, teleponTextBox.Text);
                 idPelanggan = connection.isExist(namaTextBox.Text, teleponTextBox.Text);
             }
-            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, "Bandung-depok", 3, "2015-04-21", 4, 1, "D 7648 AJ", "85000"))
+
+            //getIdJadwal
+            int idJadwal = 0;
+            switch(waktuComboBox.Text)
+            {
+                case "05.00 WIB":
+                    idJadwal = 1;
+                    break;
+                case "07.30 WIB":
+                    idJadwal = 2;
+                    break;
+                case "10.00 WIB":
+                    idJadwal = 3;
+                    break;
+                case "12.00 WIB":
+                    idJadwal = 4;
+                    break;
+                case "13.30 WIB":
+                    idJadwal = 5;
+                    break;
+                case "15.45 WIB":
+                    idJadwal = 6;
+                    break;
+                case "17.30 WIB":
+                    idJadwal = 7;
+                    break;
+                case "19.30 WIB":
+                    idJadwal = 8;
+                    break;
+            }
+
+            //MessageBox.Show(idJadwal.ToString());
+            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), 4, 1, mobilComboBox.Text, hargaTextBox.Text))
                 MessageBox.Show("Insert transaksi berhasil");
             else
                 MessageBox.Show("Insert transaksi gagal");
