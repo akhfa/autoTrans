@@ -26,10 +26,10 @@ namespace autoTrans
         //Initialize values
         private void Initialize()
         {
-            server = "akhfa.in";
+            server = "localhost";
             database = "si_autotrans";
-            uid = "si_autotrans";
-            password = "autotransaya";
+            uid = "root";
+            password = "";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -82,7 +82,7 @@ namespace autoTrans
         }
 
         //Insert statement
-        public void Insert(String _query)
+        public bool Insert(String _query)
         {
             string query = _query;
 
@@ -97,7 +97,50 @@ namespace autoTrans
 
                 //close connection
                 this.CloseConnection();
+                return true;
             }
+            return false;
+        }
+
+        public bool insertNewPelanggan(string nama, string nomor)
+        {
+            string query = "INSERT INTO pelanggan (nama, telepon) values ('" + nama + "', '" + nomor + "')";
+
+            return Insert(query);
+        }
+
+        public bool insertTransaksi(string id_transaksi, int id_pelanggan, string trayek, int id_jadwal, string date, 
+                                    int no_kursi, int status, string plat_nomor, string harga)
+        {
+            string query = "INSERT INTO transaksi (id_transaksi, id_pelanggan, trayek, id_jadwal, tanggal_keberangkatan, no_kursi, status, mobil, harga) "+
+                "values ('" + id_transaksi + "','" + id_pelanggan + "', '" + trayek + "','"+ id_jadwal +"','"+ date +"','"+
+                no_kursi +"', '"+ status +"','"+ plat_nomor +"','"+ harga +"')";
+            
+            return Insert(query);
+        }
+
+
+        //Mengecek apakah pelanggan dengan nama name dan nomor telepon number ada di database
+        //Jika ada, kembalikan id_pelanggan, jika enggak, kembalikan 0
+        public int isExist(string name, string number)
+        {
+            string query = "SELECT * FROM pelanggan where nama = '" + name + "' and telepon = '" + number+"'";
+            if(this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while(dataReader.Read())
+                {
+                    if(dataReader["nama"].ToString().Equals(name) && dataReader["telepon"].ToString().Equals(number))
+                    {
+                        int result = int.Parse(dataReader["id_pelanggan"].ToString());
+                        this.CloseConnection();
+                        return result;
+                    }
+                }
+                this.CloseConnection();
+            }
+            return 0;
         }
         
         public List<String> getCarList(String jam, String tanggal)

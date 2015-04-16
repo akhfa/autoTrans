@@ -127,7 +127,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\kursi.jpg" />
+    <Content Include="src\kursikosong.jpg" />
+    <Content Include="src\kursisupir.jpg" />
+    <Content Include="src\kursiterisi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

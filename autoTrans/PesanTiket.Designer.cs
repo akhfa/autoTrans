@@ -42,6 +42,8 @@
             this.namaTextBox = new System.Windows.Forms.TextBox();
             this.simpanButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hargaTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.mobilComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@
             this.kursi5 = new System.Windows.Forms.PictureBox();
             this.kursi7 = new System.Windows.Forms.PictureBox();
             this.kursi6 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.hargaTextBox = new System.Windows.Forms.TextBox();
             this.pelangganGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).BeginInit();
@@ -214,6 +214,7 @@
             this.simpanButton.TabIndex = 16;
             this.simpanButton.Text = "Simpan";
             this.simpanButton.UseVisualStyleBackColor = true;
+            this.simpanButton.Click += new System.EventHandler(this.simpanButton_Click);
             // 
             // groupBox1
             // 
@@ -255,6 +256,22 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kursi";
+            // 
+            // hargaTextBox
+            // 
+            this.hargaTextBox.Location = new System.Drawing.Point(111, 45);
+            this.hargaTextBox.Name = "hargaTextBox";
+            this.hargaTextBox.Size = new System.Drawing.Size(100, 23);
+            this.hargaTextBox.TabIndex = 48;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(45, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 16);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Harga";
             // 
             // label14
             // 
@@ -504,22 +521,6 @@
             this.kursi6.Size = new System.Drawing.Size(61, 46);
             this.kursi6.TabIndex = 24;
             this.kursi6.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(45, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 16);
-            this.label15.TabIndex = 47;
-            this.label15.Text = "Harga";
-            // 
-            // hargaTextBox
-            // 
-            this.hargaTextBox.Location = new System.Drawing.Point(111, 45);
-            this.hargaTextBox.Name = "hargaTextBox";
-            this.hargaTextBox.Size = new System.Drawing.Size(100, 23);
-            this.hargaTextBox.TabIndex = 48;
             // 
             // Tiket
             // 
