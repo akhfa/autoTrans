@@ -29,6 +29,9 @@ namespace autoTrans
             bulanComboBox.Items.Add("Oktober");
             bulanComboBox.Items.Add("November");
             bulanComboBox.Items.Add("Desember");
+
+            ModeComboBox.Items.Add("Jam");
+            ModeComboBox.Items.Add("Hari");
         }
 
         private void tampilkanButton_Click(object sender, EventArgs e)
@@ -41,8 +44,8 @@ namespace autoTrans
 
             List<string>[] ListStats = connection.SelectStats(d1, d2);
 
+            //untuk graf jam
             Dictionary<string, int> FreqJam = new Dictionary<string, int>();
-
             FreqJam["05.00 WIB"] = 0;
             FreqJam["07.30 WIB"] = 0;
             FreqJam["10.00 WIB"] = 0;
@@ -55,25 +58,50 @@ namespace autoTrans
             {
                 FreqJam[jam]++;
             }
-            //Series ser1 = new Series("Jam", 8);
-            if (chart1.Series.IsUniqueName("Frekuensi Jam"))
+
+            //untuk graf hari
+            Dictionary<string, int> FreqHari = new Dictionary<string, int>();
+            FreqHari["Senin"] = 0;
+            FreqHari["Selasa"] = 0;
+            FreqHari["Rabu"] = 0;
+            FreqHari["Kamis"] = 0;
+            FreqHari["Jumat"] = 0;
+            FreqHari["Sabtu"] = 0;
+            FreqHari["Minggu"] = 0;
+            foreach(string tanggal in ListStats[1])
             {
-                chart1.Series.Add("Frekuensi Jam");
+                DateTime time = DateTime.Parse(tanggal);
+                FreqHari[time.ToString("ddddddd")]++;
             }
-            chart1.Series["Frekuensi Jam"].Points.DataBindXY(FreqJam.Keys, FreqJam.Values);
-            chart1.Series["Frekuensi Jam"].IsVisibleInLegend = false;
-            //chart1.Series.  
-            //for(int i=0; i<ListStats.Length; i++)
-            /*foreach (string s in ListStats[0])
+
+            if (ModeComboBox.SelectedIndex == 0)
             {
-                //Debug.Write(s + " ");
+                if (!chart1.Series.IsUniqueName("Frekuensi Hari"))
+                {
+                    chart1.Series["Frekuensi Hari"].Enabled = false;
+                }
+                if (chart1.Series.IsUniqueName("Frekuensi Jam"))
+                {
+                    chart1.Series.Add("Frekuensi Jam");
+                }
+                chart1.Series["Frekuensi Jam"].Enabled = true;
+                chart1.Series["Frekuensi Jam"].Points.DataBindXY(FreqJam.Keys, FreqJam.Values);
+                chart1.Series["Frekuensi Jam"].IsVisibleInLegend = false;
             }
-            foreach (string s in ListStats[1])
+            else if(ModeComboBox.SelectedIndex == 1)
             {
-                //Debug.WriteLine(s);
-                MessageBox.Show(s);
-            }*/
-            //MessageBox.Show(s);
+                if (!chart1.Series.IsUniqueName("Frekuensi Jam"))
+                {
+                    chart1.Series["Frekuensi Jam"].Enabled = false;
+                }
+                if(chart1.Series.IsUniqueName("Frekuensi Hari"))
+                {
+                    chart1.Series.Add("Frekuensi Hari");
+                }
+                chart1.Series["Frekuensi Hari"].Enabled = true;
+                chart1.Series["Frekuensi Hari"].Points.DataBindXY(FreqHari.Keys, FreqHari.Values);
+                chart1.Series["Frekuensi Hari"].IsVisibleInLegend = false;
+            }
         }
 
 

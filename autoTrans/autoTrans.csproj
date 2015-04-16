@@ -87,7 +87,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="stats.cs" />
     <EmbeddedResource Include="FormLaporanOwner.resx">
       <DependentUpon>FormLaporanOwner.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,9 +129,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="src\kursikosong.jpg" />
-    <Content Include="src\kursisupir.jpg" />
-    <Content Include="src\kursiterisi.jpg" />
+    <None Include="src\kursi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
