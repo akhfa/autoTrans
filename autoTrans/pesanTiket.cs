@@ -64,15 +64,14 @@ namespace autoTrans
 
             connection = new DBConnect();
 
+            waktuMonthCalendar.Enabled = false;
+
         }
 
         
         private void cekKursiButton_Click(object sender, EventArgs e)
         {
-            //connection.Insert("INSERT INTO mobil values ('AA3011DD', 'Wawan')");
-            loadDropdownMobil();
-            mobilComboBox.Enabled = true;
-            hargaTextBox.Enabled = true;
+            
         }
 
         private void loadDropdownMobil()
@@ -140,6 +139,19 @@ namespace autoTrans
                     c.Enabled = false;
                 }
             }
+        }
+
+        private void waktuComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            waktuMonthCalendar.Enabled = true;
+        }
+
+        private void waktuMonthCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            mobilComboBox.Items.Clear();
+            loadDropdownMobil();
+            mobilComboBox.Enabled = true;
+            hargaTextBox.Enabled = true;
         }
     }
 }
