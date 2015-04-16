@@ -92,7 +92,7 @@ namespace autoTrans
                 connection.insertNewPelanggan(namaTextBox.Text, teleponTextBox.Text);
                 idPelanggan = connection.isExist(namaTextBox.Text, teleponTextBox.Text);
             }
-            if (connection.insertTransaksi("myid", idPelanggan, "Bandung-depok", 3, "2015-04-21", 4, 1, "D 7648 AJ", "85000"))
+            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, "Bandung-depok", 3, "2015-04-21", 4, 1, "D 7648 AJ", "85000"))
                 MessageBox.Show("Insert transaksi berhasil");
             else
                 MessageBox.Show("Insert transaksi gagal");
