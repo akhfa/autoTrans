@@ -17,6 +17,9 @@ namespace autoTrans
         int statusPembayaran = 0;
         int noKursi = 0;
         PictureBox[] listOfPictureBox = new PictureBox[13];
+        List<int> daftarLunas = new List<int>();
+        List<string> daftarKursiIsi = new List<string>();
+
         public Tiket()
         {
             InitializeComponent();
@@ -66,7 +69,7 @@ namespace autoTrans
 
             foreach(PictureBox pic in listOfPictureBox)
             {
-                pic.Image = Image.FromFile("src/kursisupir.jpg");
+                pic.Image = Image.FromFile("src/kursikosong.jpg");
             }
 
             hargaTextBox.Text = "85000";
@@ -74,22 +77,24 @@ namespace autoTrans
 
             mobilComboBox.Enabled = false;
 
-            this.disableChair();
+            //this.disableChair();
 
             connection = new DBConnect();
 
             waktuMonthCalendar.Enabled = false;
 
+            lunasCheckBox.Visible = false;
         }
 
         
         private void cekKursiButton_Click(object sender, EventArgs e)
         {
-            List<string> daftarKursiIsi = connection.getKursiIsi(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text);
+            daftarKursiIsi = connection.getKursiIsi(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text,trayekComboBox.Text);
+            daftarLunas = connection.getLunas(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
             foreach(string kursi in daftarKursiIsi)
             {
-                listOfPictureBox[Convert.ToInt32(kursi)].Image = Image.FromFile("src/kursiterisi.jpg");
-                //MessageBox.Show(kursi);
+                listOfPictureBox[Convert.ToInt32(kursi)-1].Image = Image.FromFile("src/kursiterisi.jpg");
+                listOfPictureBox[Convert.ToInt32(kursi)-1].Enabled = false;
             }
         }
 
@@ -117,8 +122,13 @@ namespace autoTrans
             
 
             //MessageBox.Show(idJadwal.ToString());
-            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), 4, 1, mobilComboBox.Text, hargaTextBox.Text))
+            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), noKursi, 0, mobilComboBox.Text, hargaTextBox.Text))
+            {
                 MessageBox.Show("Insert transaksi berhasil");
+                listOfPictureBox[Convert.ToInt32(noKursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
+                listOfPictureBox[Convert.ToInt32(noKursi) - 1].Enabled = false;
+            }
+                
             else
                 MessageBox.Show("Insert transaksi gagal");
         }
@@ -238,11 +248,17 @@ namespace autoTrans
         private void kursi12_MouseClick(object sender, MouseEventArgs e)
         {
             noKursi = 12;
+            MessageBox.Show(noKursi.ToString());
         }
 
         private void kursi13_MouseClick(object sender, MouseEventArgs e)
         {
             noKursi = 13;
+        }
+
+        private void loadLunas(int noKursi)
+        {
+
         }
     }
 }
