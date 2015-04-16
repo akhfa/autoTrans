@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ModeComboBox = new System.Windows.Forms.ComboBox();
             this.tampilkanButton = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,22 +53,20 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(336, 99);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(358, 300);
+            this.chart1.Size = new System.Drawing.Size(358, 359);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.ModeComboBox);
             this.groupBox1.Controls.Add(this.tampilkanButton);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.label2);
@@ -76,19 +75,37 @@
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(28, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(268, 193);
+            this.groupBox1.Size = new System.Drawing.Size(268, 232);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lihat Laporan";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 19);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Mode Tampilan";
+            // 
+            // ModeComboBox
+            // 
+            this.ModeComboBox.FormattingEnabled = true;
+            this.ModeComboBox.Location = new System.Drawing.Point(49, 163);
+            this.ModeComboBox.Name = "ModeComboBox";
+            this.ModeComboBox.Size = new System.Drawing.Size(200, 27);
+            this.ModeComboBox.TabIndex = 4;
+            // 
             // tampilkanButton
             // 
-            this.tampilkanButton.Location = new System.Drawing.Point(163, 153);
+            this.tampilkanButton.Location = new System.Drawing.Point(163, 199);
             this.tampilkanButton.Name = "tampilkanButton";
             this.tampilkanButton.Size = new System.Drawing.Size(86, 28);
             this.tampilkanButton.TabIndex = 4;
             this.tampilkanButton.Text = "Tampilkan";
             this.tampilkanButton.UseVisualStyleBackColor = true;
+            this.tampilkanButton.Click += new System.EventHandler(this.tampilkanButton_Click);
             // 
             // dateTimePicker2
             // 
@@ -140,24 +157,24 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(28, 299);
+            this.groupBox2.Location = new System.Drawing.Point(28, 346);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(268, 174);
+            this.groupBox2.Size = new System.Drawing.Size(268, 136);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cetak Laporan Bulanan";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 81);
+            this.textBox1.Location = new System.Drawing.Point(89, 68);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 26);
+            this.textBox1.Size = new System.Drawing.Size(160, 26);
             this.textBox1.TabIndex = 6;
             // 
             // tahunLabel
             // 
             this.tahunLabel.AutoSize = true;
-            this.tahunLabel.Location = new System.Drawing.Point(15, 81);
+            this.tahunLabel.Location = new System.Drawing.Point(17, 68);
             this.tahunLabel.Name = "tahunLabel";
             this.tahunLabel.Size = new System.Drawing.Size(45, 19);
             this.tahunLabel.TabIndex = 5;
@@ -166,16 +183,16 @@
             // bulanComboBox
             // 
             this.bulanComboBox.FormattingEnabled = true;
-            this.bulanComboBox.Location = new System.Drawing.Point(85, 38);
+            this.bulanComboBox.Location = new System.Drawing.Point(89, 31);
             this.bulanComboBox.Name = "bulanComboBox";
-            this.bulanComboBox.Size = new System.Drawing.Size(164, 27);
+            this.bulanComboBox.Size = new System.Drawing.Size(160, 27);
             this.bulanComboBox.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(174, 123);
+            this.button1.Location = new System.Drawing.Point(163, 100);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
+            this.button1.Size = new System.Drawing.Size(84, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "Cetak";
             this.button1.UseVisualStyleBackColor = true;
@@ -183,7 +200,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 38);
+            this.label3.Location = new System.Drawing.Point(15, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 1;
@@ -226,6 +243,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label tahunLabel;
         private System.Windows.Forms.ComboBox bulanComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox ModeComboBox;
 
     }
 }
