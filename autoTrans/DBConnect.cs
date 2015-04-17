@@ -160,6 +160,35 @@ namespace autoTrans
             return daftarLunas;
         }
 
+        public List<string> getAllMobil()
+        {
+            List<string> allmobil = new List<string>();
+            string query = "SELECT plat_nomor FROM mobil";
+            if(this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    allmobil.Add(dataReader["plat_nomor"].ToString());
+                }
+                this.CloseConnection();
+            }
+            return allmobil;
+        }
+
+        public bool addmobil(int id_jadwal, string plat_nomor, string tanggal)
+        {
+            string query = "INSERT INTO trans_mobil values('" + id_jadwal + "','" + plat_nomor + "','" + tanggal + "')";
+            if(this.OpenConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+                return true;
+            }
+            return false;
+        }
 
         //Mengecek apakah pelanggan dengan nama name dan nomor telepon number ada di database
         //Jika ada, kembalikan id_pelanggan, jika enggak, kembalikan 0

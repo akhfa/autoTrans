@@ -438,6 +438,7 @@
             this.tambahButton.TabIndex = 20;
             this.tambahButton.Text = "Tambah Mobil";
             this.tambahButton.UseVisualStyleBackColor = true;
+            this.tambahButton.Click += new System.EventHandler(this.tambahButton_Click);
             // 
             // pelangganGroupBox
             // 

@@ -18,6 +18,7 @@ namespace autoTrans
         PictureBox[] listOfPictureBox = new PictureBox[13];
         List<int> daftarLunas = new List<int>();
         List<string> daftarKursiIsi = new List<string>();
+        List<string> allMobil = new List<string>();
 
         public penambahanMobil()
         {
@@ -89,6 +90,7 @@ namespace autoTrans
             }
 
             mobilComboBox.Enabled = false;
+            tambahComboBox.Enabled = false;
 
             connection = new DBConnect();
 
@@ -118,13 +120,30 @@ namespace autoTrans
 
         private void cekKursiButton_Click(object sender, EventArgs e)
         {
+            //daftarLunas = connection.getLunas(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
+            allMobil = connection.getAllMobil();
             daftarKursiIsi = connection.getKursiIsi(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
-            daftarLunas = connection.getLunas(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
-            foreach (string kursi in daftarKursiIsi)
+            if(daftarKursiIsi.Count == 0)
             {
-                listOfPictureBox[Convert.ToInt32(kursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
-                listOfPictureBox[Convert.ToInt32(kursi) - 1].Enabled = false;
+                foreach (PictureBox pic in listOfPictureBox)
+                {
+                    pic.Image = Image.FromFile("src/kursikosong.jpg");
+                }
             }
+            else
+            {
+                foreach (string kursi in daftarKursiIsi)
+                {
+                    listOfPictureBox[Convert.ToInt32(kursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
+                    listOfPictureBox[Convert.ToInt32(kursi) - 1].Enabled = false;
+                    tambahComboBox.Enabled = true;
+                }
+                foreach (string mobil in allMobil)
+                {
+                    tambahComboBox.Items.Add(mobil);
+                }
+            }
+            
         }
 
         private int getIdJadwal()
@@ -158,6 +177,12 @@ namespace autoTrans
                     break;
             }
             return idJadwal;
+        }
+
+        private void tambahButton_Click(object sender, EventArgs e)
+        {
+            if (connection.addmobil(this.getIdJadwal(), tambahComboBox.Text, waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd")))
+                MessageBox.Show("Berhasil menambahkan mobil");
         }
     }
 }
