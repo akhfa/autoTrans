@@ -18,8 +18,8 @@ namespace autoTrans
         {
             InitializeComponent();
             con = new DBConnect();
-            lokasiComboBox.Items.Add("Bandung");
-            lokasiComboBox.Items.Add("Depok");
+            lokasiComboBox.Items.Add("Bandung - Depok");
+            lokasiComboBox.Items.Add("Depok - Bandung");
             HargaTiket = 85000;
         }
 
@@ -66,7 +66,9 @@ namespace autoTrans
 
         private void backbutton_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Form menumanajer = new MenuManajer();
+            this.Dispose(true);
+            menumanajer.Show();
         }
 
  

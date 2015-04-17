@@ -184,5 +184,12 @@ namespace autoTrans
             if (connection.addmobil(this.getIdJadwal(), tambahComboBox.Text, waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd")))
                 MessageBox.Show("Berhasil menambahkan mobil");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form menumanajer = new MenuManajer();
+            this.Dispose(true);
+            menumanajer.Show();
+        }
     }
 }

@@ -26,11 +26,11 @@ namespace autoTrans
         //Initialize values
         private void Initialize()
         {
-            //server = "akhfa.in";
-            server = "localhost";
             database = "si_autotrans";
             //uid = "si_autotrans";
+            //server = "akhfa.in";
             //password = "autotransaya";
+            server = "localhost";
             uid = "root";
             password = "";
             string connectionString;

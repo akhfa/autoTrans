@@ -61,16 +61,17 @@ namespace autoTrans
 
             //untuk graf hari
             Dictionary<string, int> FreqHari = new Dictionary<string, int>();
-            FreqHari["Senin"] = 0;
-            FreqHari["Selasa"] = 0;
-            FreqHari["Rabu"] = 0;
-            FreqHari["Kamis"] = 0;
-            FreqHari["Jumat"] = 0;
-            FreqHari["Sabtu"] = 0;
-            FreqHari["Minggu"] = 0;
+            FreqHari["Monday"] = 0;
+            FreqHari["Tuesday"] = 0;
+            FreqHari["Wednesday"] = 0;
+            FreqHari["Thursday"] = 0;
+            FreqHari["Friday"] = 0;
+            FreqHari["Saturday"] = 0;
+            FreqHari["Sunday"] = 0;
             foreach(string tanggal in ListStats[1])
             {
                 DateTime time = DateTime.Parse(tanggal);
+                //MessageBox.Show(time.ToString("ddddddd"));
                 FreqHari[time.ToString("ddddddd")]++;
             }
 

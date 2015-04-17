@@ -55,6 +55,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.anggaranTotalLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pengeluaranDataGridView)).BeginInit();
@@ -121,6 +122,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.submitButton);
             this.groupBox1.Controls.Add(this.biayaLabel);
             this.groupBox1.Controls.Add(this.biayaTextBox);
@@ -327,6 +329,16 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Anggaran Total :";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(269, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LaporanBulanan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,5 +400,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label anggaranTotalLabel;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

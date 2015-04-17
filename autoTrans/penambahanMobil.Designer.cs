@@ -64,11 +64,12 @@
             this.waktuLabel = new System.Windows.Forms.Label();
             this.trayekTiketLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tambahComboBox = new System.Windows.Forms.ComboBox();
             this.tambahButton = new System.Windows.Forms.Button();
             this.pelangganGroupBox = new System.Windows.Forms.GroupBox();
             this.judulTiketLabel = new System.Windows.Forms.Label();
-            this.tambahComboBox = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursi12)).BeginInit();
@@ -429,6 +430,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kursi";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(28, 377);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 16);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Tambah Mobil";
+            // 
+            // tambahComboBox
+            // 
+            this.tambahComboBox.FormattingEnabled = true;
+            this.tambahComboBox.Location = new System.Drawing.Point(155, 377);
+            this.tambahComboBox.Name = "tambahComboBox";
+            this.tambahComboBox.Size = new System.Drawing.Size(121, 23);
+            this.tambahComboBox.TabIndex = 45;
+            // 
             // tambahButton
             // 
             this.tambahButton.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -468,28 +486,22 @@
             this.judulTiketLabel.TabIndex = 18;
             this.judulTiketLabel.Text = "Penambahan Mobil";
             // 
-            // tambahComboBox
+            // button1
             // 
-            this.tambahComboBox.FormattingEnabled = true;
-            this.tambahComboBox.Location = new System.Drawing.Point(155, 377);
-            this.tambahComboBox.Name = "tambahComboBox";
-            this.tambahComboBox.Size = new System.Drawing.Size(121, 23);
-            this.tambahComboBox.TabIndex = 45;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(28, 377);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 16);
-            this.label15.TabIndex = 46;
-            this.label15.Text = "Tambah Mobil";
+            this.button1.Location = new System.Drawing.Point(399, 503);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // penambahanMobil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 538);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tambahButton);
             this.Controls.Add(this.pelangganGroupBox);
@@ -562,5 +574,6 @@
         private System.Windows.Forms.Label judulTiketLabel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox tambahComboBox;
+        private System.Windows.Forms.Button button1;
     }
 }

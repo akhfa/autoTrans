@@ -32,7 +32,9 @@
             this.pelangganGroupBox = new System.Windows.Forms.GroupBox();
             this.cekKursiButton = new System.Windows.Forms.Button();
             this.trayekComboBox = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.teleponTextBox = new System.Windows.Forms.TextBox();
+            this.mobilComboBox = new System.Windows.Forms.ComboBox();
             this.teleponLabel = new System.Windows.Forms.Label();
             this.waktuMonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.waktuComboBox = new System.Windows.Forms.ComboBox();
@@ -42,10 +44,9 @@
             this.namaTextBox = new System.Windows.Forms.TextBox();
             this.simpanButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lunasCheckBox = new System.Windows.Forms.CheckBox();
             this.hargaTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.mobilComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -73,7 +74,7 @@
             this.kursi5 = new System.Windows.Forms.PictureBox();
             this.kursi7 = new System.Windows.Forms.PictureBox();
             this.kursi6 = new System.Windows.Forms.PictureBox();
-            this.lunasCheckBox = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pelangganGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursi13)).BeginInit();
@@ -143,12 +144,29 @@
             this.trayekComboBox.Size = new System.Drawing.Size(170, 23);
             this.trayekComboBox.TabIndex = 12;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(23, 392);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Mobil";
+            // 
             // teleponTextBox
             // 
             this.teleponTextBox.Location = new System.Drawing.Point(96, 73);
             this.teleponTextBox.Name = "teleponTextBox";
             this.teleponTextBox.Size = new System.Drawing.Size(170, 23);
             this.teleponTextBox.TabIndex = 11;
+            // 
+            // mobilComboBox
+            // 
+            this.mobilComboBox.FormattingEnabled = true;
+            this.mobilComboBox.Location = new System.Drawing.Point(69, 390);
+            this.mobilComboBox.Name = "mobilComboBox";
+            this.mobilComboBox.Size = new System.Drawing.Size(100, 23);
+            this.mobilComboBox.TabIndex = 45;
             // 
             // teleponLabel
             // 
@@ -261,6 +279,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kursi";
             // 
+            // lunasCheckBox
+            // 
+            this.lunasCheckBox.AutoSize = true;
+            this.lunasCheckBox.Location = new System.Drawing.Point(28, 396);
+            this.lunasCheckBox.Name = "lunasCheckBox";
+            this.lunasCheckBox.Size = new System.Drawing.Size(61, 20);
+            this.lunasCheckBox.TabIndex = 18;
+            this.lunasCheckBox.Text = "Lunas";
+            this.lunasCheckBox.UseVisualStyleBackColor = true;
+            // 
             // hargaTextBox
             // 
             this.hargaTextBox.Location = new System.Drawing.Point(111, 21);
@@ -276,23 +304,6 @@
             this.label15.Size = new System.Drawing.Size(41, 16);
             this.label15.TabIndex = 47;
             this.label15.Text = "Harga";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(23, 392);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 16);
-            this.label14.TabIndex = 46;
-            this.label14.Text = "Mobil";
-            // 
-            // mobilComboBox
-            // 
-            this.mobilComboBox.FormattingEnabled = true;
-            this.mobilComboBox.Location = new System.Drawing.Point(69, 390);
-            this.mobilComboBox.Name = "mobilComboBox";
-            this.mobilComboBox.Size = new System.Drawing.Size(100, 23);
-            this.mobilComboBox.TabIndex = 45;
             // 
             // label13
             // 
@@ -539,21 +550,22 @@
             this.kursi6.TabStop = false;
             this.kursi6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.kursi6_MouseClick);
             // 
-            // lunasCheckBox
+            // button1
             // 
-            this.lunasCheckBox.AutoSize = true;
-            this.lunasCheckBox.Location = new System.Drawing.Point(28, 396);
-            this.lunasCheckBox.Name = "lunasCheckBox";
-            this.lunasCheckBox.Size = new System.Drawing.Size(61, 20);
-            this.lunasCheckBox.TabIndex = 18;
-            this.lunasCheckBox.Text = "Lunas";
-            this.lunasCheckBox.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(372, 516);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Tiket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(656, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.simpanButton);
             this.Controls.Add(this.pelangganGroupBox);
@@ -631,6 +643,7 @@
         private System.Windows.Forms.TextBox hargaTextBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.CheckBox lunasCheckBox;
+        private System.Windows.Forms.Button button1;
     }
 }
 

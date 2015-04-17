@@ -282,9 +282,9 @@ namespace autoTrans
             noKursi = 13;
         }
 
-        private void loadLunas(int noKursi)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

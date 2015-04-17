@@ -41,7 +41,7 @@ namespace autoTrans
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
     }
 }

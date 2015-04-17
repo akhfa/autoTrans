@@ -251,5 +251,12 @@ namespace autoTrans
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form menumanajer = new MenuManajer();
+            this.Dispose(true);
+            menumanajer.Show();
+        }
     }
 }

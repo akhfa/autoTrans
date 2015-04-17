@@ -242,9 +242,9 @@
             this.lokasiComboBox.FormattingEnabled = true;
             this.lokasiComboBox.Location = new System.Drawing.Point(89, 68);
             this.lokasiComboBox.Name = "lokasiComboBox";
-            this.lokasiComboBox.Size = new System.Drawing.Size(86, 27);
+            this.lokasiComboBox.Size = new System.Drawing.Size(156, 27);
             this.lokasiComboBox.TabIndex = 19;
-            this.lokasiComboBox.Text = "Bandung";
+            this.lokasiComboBox.Text = "Bandung - Depok";
             // 
             // lokasiLabel
             // 
