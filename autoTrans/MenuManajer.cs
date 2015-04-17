@@ -34,7 +34,9 @@ namespace autoTrans
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not implemented yet");
+            Form tambahMobil = new penambahanMobil();
+            this.Dispose(false);
+            tambahMobil.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
