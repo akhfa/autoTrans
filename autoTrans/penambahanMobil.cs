@@ -12,6 +12,13 @@ namespace autoTrans
 {
     public partial class penambahanMobil : Form
     {
+        DBConnect connection;
+        int statusPembayaran = 0;
+        int noKursi = 0;
+        PictureBox[] listOfPictureBox = new PictureBox[13];
+        List<int> daftarLunas = new List<int>();
+        List<string> daftarKursiIsi = new List<string>();
+
         public penambahanMobil()
         {
             InitializeComponent();
@@ -58,8 +65,99 @@ namespace autoTrans
             kursi12.Image = Image.FromFile("src/kursikosong.jpg");
             kursi13.Image = Image.FromFile("src/kursikosong.jpg");
 
-            mobilComboBox.Items.Add("AA 1234 DD");
-            mobilComboBox.Items.Add("AA 5678 DD");
+            waktuMonthCalendar.MaxSelectionCount = 1;
+
+            listOfPictureBox[0] = kursi1;
+            listOfPictureBox[1] = kursi2;
+            listOfPictureBox[2] = kursi3;
+            listOfPictureBox[3] = kursi4;
+            listOfPictureBox[4] = kursi5;
+            listOfPictureBox[5] = kursi6;
+            listOfPictureBox[6] = kursi7;
+            listOfPictureBox[7] = kursi8;
+            listOfPictureBox[8] = kursi9;
+            listOfPictureBox[9] = kursi10;
+            listOfPictureBox[10] = kursi11;
+            listOfPictureBox[11] = kursi12;
+            listOfPictureBox[12] = kursi13;
+
+            kursiSupir.Image = Image.FromFile("src/kursisupir.jpg");
+
+            foreach (PictureBox pic in listOfPictureBox)
+            {
+                pic.Image = Image.FromFile("src/kursikosong.jpg");
+            }
+
+            mobilComboBox.Enabled = false;
+
+            connection = new DBConnect();
+
+            waktuMonthCalendar.Enabled = false;
+        }
+
+        private void waktuComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            waktuMonthCalendar.Enabled = true;
+        }
+
+        private void waktuMonthCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            mobilComboBox.Items.Clear();
+            loadDropdownMobil();
+            mobilComboBox.Enabled = true;
+        }
+
+        private void loadDropdownMobil()
+        {
+            List<string> daftarMobil = connection.getCarList(waktuComboBox.Text, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"));
+            foreach (string mobil in daftarMobil)
+            {
+                mobilComboBox.Items.Add(mobil);
+            }
+        }
+
+        private void cekKursiButton_Click(object sender, EventArgs e)
+        {
+            daftarKursiIsi = connection.getKursiIsi(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
+            daftarLunas = connection.getLunas(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
+            foreach (string kursi in daftarKursiIsi)
+            {
+                listOfPictureBox[Convert.ToInt32(kursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
+                listOfPictureBox[Convert.ToInt32(kursi) - 1].Enabled = false;
+            }
+        }
+
+        private int getIdJadwal()
+        {
+            int idJadwal = 0;
+            switch (waktuComboBox.Text)
+            {
+                case "05.00 WIB":
+                    idJadwal = 1;
+                    break;
+                case "07.30 WIB":
+                    idJadwal = 2;
+                    break;
+                case "10.00 WIB":
+                    idJadwal = 3;
+                    break;
+                case "12.00 WIB":
+                    idJadwal = 4;
+                    break;
+                case "13.30 WIB":
+                    idJadwal = 5;
+                    break;
+                case "15.45 WIB":
+                    idJadwal = 6;
+                    break;
+                case "17.30 WIB":
+                    idJadwal = 7;
+                    break;
+                case "19.30 WIB":
+                    idJadwal = 8;
+                    break;
+            }
+            return idJadwal;
         }
     }
 }

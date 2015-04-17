@@ -22,6 +22,7 @@ namespace autoTrans
             Form lapHarian = new LaporanHarianManajer();
             this.Dispose(false);
             lapHarian.Show();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +35,11 @@ namespace autoTrans
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Not implemented yet");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

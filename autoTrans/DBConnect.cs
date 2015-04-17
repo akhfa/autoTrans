@@ -338,7 +338,7 @@ namespace autoTrans
             }
             return ListStats;
         }
-        /*
+        
         //Count statement
         public int Count(string _query)
         {

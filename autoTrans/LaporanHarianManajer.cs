@@ -64,6 +64,11 @@ namespace autoTrans
             totalAnggaranValueLabel.Text = totalAnggaran.ToString("Rp#,0.00");
         }
 
+        private void backbutton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
  
     }
 }

@@ -52,8 +52,9 @@
             this.totalAnggaranValueLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lihatButton = new System.Windows.Forms.Button();
             this.tanggalTerpilihLabel = new System.Windows.Forms.Label();
+            this.lihatButton = new System.Windows.Forms.Button();
+            this.backbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -317,17 +318,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistik";
             // 
-            // lihatButton
-            // 
-            this.lihatButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lihatButton.Location = new System.Drawing.Point(137, 277);
-            this.lihatButton.Name = "lihatButton";
-            this.lihatButton.Size = new System.Drawing.Size(108, 31);
-            this.lihatButton.TabIndex = 25;
-            this.lihatButton.Text = "Lihat Statistik";
-            this.lihatButton.UseVisualStyleBackColor = true;
-            this.lihatButton.Click += new System.EventHandler(this.lihatButton_Click);
-            // 
             // tanggalTerpilihLabel
             // 
             this.tanggalTerpilihLabel.AutoSize = true;
@@ -340,11 +330,33 @@
             this.tanggalTerpilihLabel.Text = "Tanggal Terpilih";
             this.tanggalTerpilihLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lihatButton
+            // 
+            this.lihatButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lihatButton.Location = new System.Drawing.Point(137, 277);
+            this.lihatButton.Name = "lihatButton";
+            this.lihatButton.Size = new System.Drawing.Size(108, 31);
+            this.lihatButton.TabIndex = 25;
+            this.lihatButton.Text = "Lihat Statistik";
+            this.lihatButton.UseVisualStyleBackColor = true;
+            this.lihatButton.Click += new System.EventHandler(this.lihatButton_Click);
+            // 
+            // backbutton
+            // 
+            this.backbutton.Location = new System.Drawing.Point(18, 277);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(82, 31);
+            this.backbutton.TabIndex = 26;
+            this.backbutton.Text = "Back";
+            this.backbutton.UseVisualStyleBackColor = true;
+            this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
+            // 
             // LaporanHarianManajer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 328);
+            this.Controls.Add(this.backbutton);
             this.Controls.Add(this.lihatButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lokasiLabel);
@@ -391,5 +403,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button lihatButton;
         private System.Windows.Forms.Label tanggalTerpilihLabel;
+        private System.Windows.Forms.Button backbutton;
     }
 }
