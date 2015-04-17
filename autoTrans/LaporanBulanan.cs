@@ -112,7 +112,7 @@ namespace autoTrans
                 else 
                 {
                     string query = "INSERT INTO pengeluaran (`id_transaksi`, `nama_barang`, `harga`, `tanggal`, `jumlah`) VALUES (NULL, '" + keterangan + "', '" + biaya + "', '" + tanggal + "','" + jumlah + "');";
-                    MessageBox.Show(query);
+                    MessageBox.Show("Pengeluaran berhasil ditambahkan!");
                     con.Insert(query);
                     //kosongkan form
                     ketTextBox.Text = "";

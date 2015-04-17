@@ -34,6 +34,8 @@ namespace autoTrans
 
         private void resetState()
         {
+            trayekComboBox.Items.Clear();
+            waktuComboBox.Items.Clear();
             waktuComboBox.Items.Add("05.00 WIB");
             waktuComboBox.Items.Add("07.30 WIB");
             waktuComboBox.Items.Add("10.00 WIB");
