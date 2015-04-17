@@ -37,6 +37,10 @@ namespace autoTrans
                 this.Dispose(false);
                 menumanajer.Show();
             }
+            else
+            {
+                MessageBox.Show("User atau password salah");
+            }
         }
     }
 }
