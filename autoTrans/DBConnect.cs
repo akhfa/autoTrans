@@ -137,7 +137,7 @@ namespace autoTrans
                     hasil = hasil + dataReader["no_kursi"].ToString() + ",";
                     daftarKursiIsi.Add(dataReader["no_kursi"].ToString());
                 }
-                //MessageBox.Show(hasil);
+                MessageBox.Show(hasil);
                 this.CloseConnection();
             }
             return daftarKursiIsi;

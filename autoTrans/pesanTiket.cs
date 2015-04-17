@@ -23,6 +23,17 @@ namespace autoTrans
         public Tiket()
         {
             InitializeComponent();
+            kursiSupir.Image = Image.FromFile("src/kursisupir.jpg");
+
+            resetState();
+            foreach (PictureBox pic in listOfPictureBox)
+            {
+                pic.Image = Image.FromFile("src/kursikosong.jpg");
+            }
+        }
+
+        private void resetState()
+        {
             waktuComboBox.Items.Add("05.00 WIB");
             waktuComboBox.Items.Add("07.30 WIB");
             waktuComboBox.Items.Add("10.00 WIB");
@@ -37,7 +48,6 @@ namespace autoTrans
             trayekComboBox.Items.Add("Bandung - Depok");
 
             label1.Text = "1";
-            label1.BackColor = System.Drawing.Color.Transparent;
             label2.Text = "2";
             label3.Text = "3";
             label4.Text = "4";
@@ -65,13 +75,6 @@ namespace autoTrans
             listOfPictureBox[11] = kursi12;
             listOfPictureBox[12] = kursi13;
 
-            kursiSupir.Image = Image.FromFile("src/kursisupir.jpg");
-
-            foreach(PictureBox pic in listOfPictureBox)
-            {
-                pic.Image = Image.FromFile("src/kursikosong.jpg");
-            }
-
             hargaTextBox.Text = "85000";
             hargaTextBox.Enabled = false;
 
@@ -84,18 +87,33 @@ namespace autoTrans
             waktuMonthCalendar.Enabled = false;
 
             lunasCheckBox.Visible = false;
-        }
 
-        
+            namaTextBox.Text = "";
+            teleponTextBox.Text = "";
+            trayekComboBox.Text = "";
+            waktuComboBox.Text = "";
+        }
         private void cekKursiButton_Click(object sender, EventArgs e)
         {
             daftarKursiIsi = connection.getKursiIsi(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text,trayekComboBox.Text);
-            daftarLunas = connection.getLunas(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
-            foreach(string kursi in daftarKursiIsi)
+            //daftarLunas = connection.getLunas(waktuMonthCalendar.SelectionRange.Start.ToString("yyyyMMdd"), this.getIdJadwal(), mobilComboBox.Text, trayekComboBox.Text);
+
+            if (daftarKursiIsi.Count == 0)
             {
-                listOfPictureBox[Convert.ToInt32(kursi)-1].Image = Image.FromFile("src/kursiterisi.jpg");
-                listOfPictureBox[Convert.ToInt32(kursi)-1].Enabled = false;
+                foreach (PictureBox pic in listOfPictureBox)
+                {
+                    pic.Image = Image.FromFile("src/kursikosong.jpg");
+                }
             }
+            else
+            {
+                foreach (string kursi in daftarKursiIsi)
+                {
+                    listOfPictureBox[Convert.ToInt32(kursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
+                    listOfPictureBox[Convert.ToInt32(kursi) - 1].Enabled = false;
+                }
+            }
+            
         }
 
         private void loadDropdownMobil()
@@ -122,15 +140,23 @@ namespace autoTrans
             
 
             //MessageBox.Show(idJadwal.ToString());
-            if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), noKursi, 0, mobilComboBox.Text, hargaTextBox.Text))
+            if(noKursi == 0)
             {
-                MessageBox.Show("Insert transaksi berhasil");
-                listOfPictureBox[Convert.ToInt32(noKursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
-                listOfPictureBox[Convert.ToInt32(noKursi) - 1].Enabled = false;
+                MessageBox.Show("Kursi belum terpilih");
             }
-                
             else
-                MessageBox.Show("Insert transaksi gagal");
+            {
+                if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), noKursi, 0, mobilComboBox.Text, hargaTextBox.Text))
+                {
+                    MessageBox.Show("Insert transaksi berhasil");
+                    listOfPictureBox[Convert.ToInt32(noKursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
+                    listOfPictureBox[Convert.ToInt32(noKursi) - 1].Enabled = false;
+                    resetState();
+                }
+                else
+                    MessageBox.Show("Insert transaksi gagal");
+            }
+
         }
 
         private int getIdJadwal()
