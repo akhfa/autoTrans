@@ -35,6 +35,7 @@
             this.tampilkanButton = new System.Windows.Forms.Button();
             this.bulanLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
             this.biayaLabel = new System.Windows.Forms.Label();
             this.biayaTextBox = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.anggaranTotalLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pengeluaranDataGridView)).BeginInit();
@@ -140,6 +140,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Input Pengeluaran";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(269, 131);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // submitButton
             // 
             this.submitButton.Location = new System.Drawing.Point(371, 127);
@@ -218,10 +228,11 @@
             // laporanHarianLabel
             // 
             this.laporanHarianLabel.AutoSize = true;
-            this.laporanHarianLabel.Font = new System.Drawing.Font("Baskerville Old Face", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.laporanHarianLabel.Location = new System.Drawing.Point(173, 6);
+            this.laporanHarianLabel.Font = new System.Drawing.Font("Motorwerk", 30F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laporanHarianLabel.Location = new System.Drawing.Point(157, 10);
             this.laporanHarianLabel.Name = "laporanHarianLabel";
-            this.laporanHarianLabel.Size = new System.Drawing.Size(291, 43);
+            this.laporanHarianLabel.Size = new System.Drawing.Size(350, 30);
             this.laporanHarianLabel.TabIndex = 7;
             this.laporanHarianLabel.Text = "Laporan Bulanan";
             this.laporanHarianLabel.Click += new System.EventHandler(this.laporanHarianLabel_Click);
@@ -328,16 +339,6 @@
             this.label5.Size = new System.Drawing.Size(108, 19);
             this.label5.TabIndex = 15;
             this.label5.Text = "Anggaran Total :";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(269, 131);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LaporanBulanan
             // 
