@@ -109,6 +109,10 @@ namespace autoTrans
             }
             else
             {
+                foreach (PictureBox pic in listOfPictureBox)
+                {
+                    pic.Image = Image.FromFile("src/kursikosong.jpg");
+                }
                 foreach (string kursi in daftarKursiIsi)
                 {
                     listOfPictureBox[Convert.ToInt32(kursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
@@ -139,10 +143,18 @@ namespace autoTrans
 
             //getIdJadwal
             int idJadwal = this.getIdJadwal();
-            
 
-            //MessageBox.Show(idJadwal.ToString());
-            if(noKursi == 0)
+            if (namaTextBox.Text == "")
+            {
+                MessageBox.Show("Nama belum diisi");
+            }
+
+            else if (teleponTextBox.Text == "")
+            {
+                MessageBox.Show("Telepon belum diisi");
+            }
+            
+            else if(noKursi == 0)
             {
                 MessageBox.Show("Kursi belum terpilih");
             }
@@ -150,13 +162,13 @@ namespace autoTrans
             {
                 if (connection.insertTransaksi(DateTime.Now.ToString("yyMMddhhmmss"), idPelanggan, trayekComboBox.Text, idJadwal, waktuMonthCalendar.SelectionRange.Start.ToString("yyyy-MM-dd"), noKursi, 0, mobilComboBox.Text, hargaTextBox.Text))
                 {
-                    MessageBox.Show("Insert transaksi berhasil");
+                    MessageBox.Show("Transaksi berhasil dimasukkan");
                     listOfPictureBox[Convert.ToInt32(noKursi) - 1].Image = Image.FromFile("src/kursiterisi.jpg");
                     listOfPictureBox[Convert.ToInt32(noKursi) - 1].Enabled = false;
                     resetState();
                 }
                 else
-                    MessageBox.Show("Insert transaksi gagal");
+                    MessageBox.Show("Transaksi gagal dimasukkan");
             }
 
         }
